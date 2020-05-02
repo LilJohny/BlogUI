@@ -9,6 +9,6 @@ export default class ArticleImage extends React.Component {
         this.alt = alternativeText;
     }
     render() {
-        return (<img src={this.src} alt={this.alt}></img>)
+        return (<img src={this.src} alt={this.alt}></img>);
     }
 }
