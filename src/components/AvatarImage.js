@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function VariantAvatars(source, alt = '') {
+export default function AvatarImage(source, alt = '') {
     const classes = useStyles();
     const classNames = `${classes.rounded} ${classes.large}`
     return (
