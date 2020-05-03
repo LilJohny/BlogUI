@@ -1,23 +1,36 @@
 import logo from './logo.svg';
-import './css/App.css';
 import 'typeface-roboto';
+import './css/App.css'
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; // add
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import VariantAvatars from './components/AvatarImage';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import ProfilePage from './pages/profile';
 
 function App() {
-  return (
-    <html>
-      <head>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-      </head>
-      <div className="App">
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
-      </div>
-    </html>
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
+  return (
+    <React.Fragment>
+
+      <html>
+        <head>
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        </head>
+        <div className="App">
+        <ProfilePage/>
+        </div>
+      </html>
+    </React.Fragment>
   );
 }
 
