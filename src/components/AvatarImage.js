@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import { green } from '@material-ui/core/colors';
+import {green} from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function AvatarImage(source, alt = '') {
+export default function AvatarImage(props) {
     const classes = useStyles();
     const classNames = `${classes.rounded} ${classes.large}`
     return (
         <div className={classes.root}>
             <Avatar variant="rounded" className={classNames}>
-                <img src={source} alt={alt}></img>
+                <img src={props.src} alt={props.alt}/>
             </Avatar>
         </div>
     );
