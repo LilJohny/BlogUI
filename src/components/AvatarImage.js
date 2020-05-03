@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AvatarImage(props) {
     const classes = useStyles();
-    const classNames = `${classes.rounded} ${classes.large}`
+    const classNames = props.large? `${classes.rounded} ${classes.large}` : `${classes.rounded}`;
     return (
         <div className={classes.root}>
-            <Avatar variant="rounded" className={classNames}>
+            <Avatar variant={props.variant} className={classNames}>
                 <img src={props.src} alt={props.alt}/>
             </Avatar>
         </div>
