@@ -1,5 +1,5 @@
 import React from 'react';
-import VariantAvatars from '../components/AvatarImage'
+import VariantAvatars from '../components/AvatarImage';
 
 
 
