@@ -4,6 +4,6 @@ import ArtileNavBar from '../components/ArticleNavBar';
 
 export default class ArticlePage extends React.Component {
     render() {
-        return (ArtileNavBar);
+        return (<ArtileNavBar/>);
     }
 }
