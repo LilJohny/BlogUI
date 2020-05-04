@@ -7,6 +7,8 @@ import {Paper} from "material-ui";
 import Container from "@material-ui/core/Container";
 import SimpleList from "../components/SimpleList";
 import Button from "@material-ui/core/Button";
+import IconsList from "../components/IconsList";
+import {Looks3, LooksOne, LooksTwo} from "@material-ui/icons";
 
 export default class ProfilePage extends React.Component {
     render() {
@@ -40,8 +42,8 @@ export default class ProfilePage extends React.Component {
                             </div>
                             <div className={"likedPosts"}>
                                 <h1>User likes these categories : </h1>
-                                <SimpleList
-                                    titles={["First liked category", "Second liked category", "Third liked category"]}/>
+                                <IconsList
+                                    list={[["First liked category", LooksOne], ["Second liked category", LooksTwo], ["Third liked category", Looks3]]}/>
                             </div>
                             <div className={"badges"}>
                                 <h1>Badges: </h1>
