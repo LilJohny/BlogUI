@@ -5,7 +5,7 @@ import "../css/Article.css";
 import "../css/Profile.css";
 import {Paper} from "material-ui";
 import Container from "@material-ui/core/Container";
-import SimpleList from "../components/List";
+import SimpleList from "../components/SimpleList";
 import Button from "@material-ui/core/Button";
 
 export default class ProfilePage extends React.Component {
