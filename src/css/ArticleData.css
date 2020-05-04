@@ -12,3 +12,6 @@
     display:-webkit-flex;
     display:flex;
 }
+.time{
+    color: grey;
+}

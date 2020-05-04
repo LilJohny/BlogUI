@@ -9,8 +9,9 @@ export default class ArticleData extends React.Component {
                 <div className={"flexbox"}>
                     <span><AvatarImage className={"pic"} src={this.props.imageSrc} alt={this.props.imageAlt}
                                        variant={"circle"}/></span>
-                    <span><p>{this.props.authorName}</p></span>
-                    <span><time dateTime={this.props.dateTime}/></span>
+                    <span><p>{this.props.authorName}</p>
+                    <p>Posted on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time> </p>
+                    </span>
                 </div>
             </div>
         );
