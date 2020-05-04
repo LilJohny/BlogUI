@@ -3,7 +3,6 @@ import '../css/Article.css';
 import NavBar from "../components/NavBar";
 import {Paper} from "material-ui";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
 import BackToTopButton from "../components/BackToTopButton";
 import ArticleImage from "../components/ArticleImage";
 import ArticleData from "../components/ArticleData";
