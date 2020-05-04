@@ -39,7 +39,7 @@ export default class ProfilePage extends React.Component {
                                     titles={["Very long title of Post 1 written by user", "Post 2", "Post 3"]}/>
                             </div>
                             <div className={"likedPosts"}>
-                                <h1>User likes these categories of posts: </h1>
+                                <h1>User likes these categories : </h1>
                                 <SimpleList
                                     titles={["First liked category", "Second liked category", "Third liked category"]}/>
                             </div>
