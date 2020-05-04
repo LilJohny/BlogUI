@@ -1,6 +1,6 @@
 import React from 'react';
 import {AppBar, Toolbar} from '@material-ui/core';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import FaceIcon from '@material-ui/icons/Face';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import '../css/NavBar.css';
@@ -21,7 +21,7 @@ export default class NavBar extends React.Component {
                     </IconButton>
                     <section className={"rightToolBar"}>
                     <IconButton className={"profile"} aria-label="My profile" color="white">
-                        <AccountBoxIcon/>
+                        <FaceIcon/>
                     </IconButton>
                     </section>
                 </Toolbar>
