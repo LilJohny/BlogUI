@@ -9,6 +9,9 @@
 .likedPosts{
     grid-column: 5/span 3;
 }
+.saved{
+    grid-column: 1/span 2;
+}
 .profile{
     height: 100%;
 }
