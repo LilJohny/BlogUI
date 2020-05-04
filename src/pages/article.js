@@ -16,7 +16,6 @@ export default class ArticlePage extends React.Component {
                 <NavBar article={true}/>
                 <Container>
 
-                    <Box my={2}>
                         <Paper>
                             <article>
                                 <h1>{this.props.title}</h1>
@@ -29,10 +28,9 @@ export default class ArticlePage extends React.Component {
                                 <p>{this.props.text}</p>
                             </article>
                         </Paper>
-                    </Box>
 
+                    <BackToTopButton/>
                 </Container>
-                <BackToTopButton/>
             </React.Fragment>
 
         )

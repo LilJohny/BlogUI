@@ -1,5 +1,5 @@
 
-.ArticleData > div > div > div > img {
+div > div > div > div > img {
     float: right;
 }
 .AuthorDate{
