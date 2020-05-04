@@ -34,7 +34,7 @@ export default class ProfilePage extends React.Component {
                                     titles={["Saved post 1", "Saved post 2", "Saved post 3"]}/>
                             </div>
                             <div className={"User`s Posts"}>
-                                <h1>Posts: </h1>
+                                <h1>User`s Posts: </h1>
                                 <SimpleList
                                     titles={["Very long title of Post 1 written by user", "Post 2", "Post 3"]}/>
                             </div>
