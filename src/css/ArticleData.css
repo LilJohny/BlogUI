@@ -2,3 +2,13 @@
 .ArticleData > div > div > div > img {
     float: right;
 }
+.AuthorDate{
+    margin-left: auto;
+}
+.flexbox{
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex;
+}
