@@ -4,13 +4,10 @@ import FaceIcon from '@material-ui/icons/Face';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import '../css/NavBar.css';
-import MenuItem from "@material-ui/core/MenuItem";
 import Drawer from "@material-ui/core/Drawer";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import clsx from "clsx";
 import makeStyles from "@material-ui/styles/makeStyles";
 
