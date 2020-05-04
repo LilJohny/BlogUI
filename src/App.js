@@ -4,12 +4,14 @@ import './css/App.css'
 import React from 'react';
 import ArticlePage from "./pages/article";
 import {MuiThemeProvider} from "material-ui";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 
 function App() {
     return (
         <MuiThemeProvider>
-        <div className="App">
+            <div className="App">
+                <CssBaseline/>
                 <ArticlePage
                     imageSrc={"https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg"}
                     text={[...new Array(100)]
@@ -26,7 +28,7 @@ function App() {
                     title={"Test Article Title"}
                     subtitle={"This is test subtitle"}
                 />
-        </div>
+            </div>
         </MuiThemeProvider>
     );
 }
