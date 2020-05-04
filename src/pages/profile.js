@@ -15,19 +15,21 @@ export default class ProfilePage extends React.Component {
         return (
             <React.Fragment>
                 <NavBar/>
-                <Container>
-                    <Paper>
+                <Container className={"profile"}>
+                    <Paper >
                         <article>
                             <div className={"flexbox"}>
                             <span><AvatarImage large={true} variant={"rounded"} className={"ProfilePicture"}
                                                style={imageStyle}/></span>
                                 <span><h1>User`s Name : {this.props.profileName}</h1>
                                 <h4>Joined us on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time> </h4>
+                                    <p>{this.props.userBio}</p>
                                 </span>
                             </div>
                             <div className={"likedPosts"}>
-                            <h1>User likes these categories of posts: </h1>
-                            <SimpleList titles={["First liked article", "Second liked article", "Third liked article"]}/>
+                                <h1>User likes these categories of posts: </h1>
+                                <SimpleList
+                                    titles={["First liked category", "Second liked category", "Third liked category"]}/>
                             </div>
                         </article>
                     </Paper>

@@ -9,6 +9,6 @@
 .likedPosts{
     grid-column: 5/span 3;
 }
-.ProfilePicture {
-
+.profile{
+    height: 100%;
 }

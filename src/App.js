@@ -13,7 +13,7 @@ function App() {
         <MuiThemeProvider>
             <div className="App">
                 <CssBaseline/>
-{/*                       <ArticlePage
+                {/*                       <ArticlePage
                     imageSrc={"https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg"}
                     text={[...new Array(100)]
                         .map(
@@ -30,7 +30,8 @@ function App() {
                    subtitle={"This is test subtitle"}
                />*/}
                 {/* The above commented code will display Article Page with dummy data./>*/}
-                <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}/>
+                <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}
+                             userBio={"Example of User Bio. Here User can write about himself."}/>
             </div>
         </MuiThemeProvider>
     );
