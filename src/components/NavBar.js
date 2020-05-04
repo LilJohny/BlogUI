@@ -1,6 +1,9 @@
 import React from 'react';
 import {AppBar, Toolbar} from '@material-ui/core';
-
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from 'material-ui/IconButton';
+import '../css/NavBar.css';
 
 export default class NavBar extends React.Component {
     render() {
@@ -12,7 +15,16 @@ export default class NavBar extends React.Component {
         }
         return (<React.Fragment>
             <AppBar position="sticky">
-                <Toolbar>{/* content */}</Toolbar>
+                <Toolbar>
+                    <IconButton className={"menu"} aria-label="Menu" color="white">
+                        <MenuIcon/>
+                    </IconButton>
+                    <section className={"rightToolBar"}>
+                    <IconButton className={"profile"} aria-label="My profile" color="white">
+                        <AccountBoxIcon/>
+                    </IconButton>
+                    </section>
+                </Toolbar>
             </AppBar>
             {toolbar}
         </React.Fragment>);

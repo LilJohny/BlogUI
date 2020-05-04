@@ -13,28 +13,29 @@ export default class ArticlePage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="Article">
-                    <NavBar article={true}/>
-                    <Container>
+                <NavBar article={true}/>
+                <Container>
 
-                        <Box my={2}>
-                            <Paper>
-                                <article>
-                                    <h1>{this.props.title}</h1>
-                                    <h2 className={"subtitle"}>{this.props.subtitle}</h2>
-                                    <ArticleImage className={"ArticleImage"} src={this.props.imageSrc} alt={this.props.imageAlt}/>
-                                    <ArticleData src={this.props.authorImageSrc} alt={this.props.authorImageAlt}
-                                                 variant={"circle"} authorName={this.props.authorName}
-                                                 dateTime={this.props.dateTime}/>
-                                    <p>{this.props.text}</p>
-                                </article>
-                            </Paper>
-                        </Box>
+                    <Box my={2}>
+                        <Paper>
+                            <article>
+                                <h1>{this.props.title}</h1>
+                                <h2 className={"subtitle"}>{this.props.subtitle}</h2>
+                                <ArticleImage className={"ArticleImage"} src={this.props.imageSrc}
+                                              alt={this.props.imageAlt}/>
+                                <ArticleData imageSrc={this.props.authorImageSrc} alt={this.props.authorImageAlt}
+                                             variant={"circle"} authorName={this.props.authorName}
+                                             dateTime={this.props.dateTime}/>
+                                <p>{this.props.text}</p>
+                            </article>
+                        </Paper>
+                    </Box>
 
-                    </Container>
-                    <BackToTopButton/>
-                </div>
+                </Container>
+                <BackToTopButton/>
             </React.Fragment>
-        );
+
+        )
+            ;
     }
 }

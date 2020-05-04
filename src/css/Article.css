@@ -24,6 +24,9 @@ article > h2 {
 .subtitle{
     color: grey;
 }
+.MuiAvatar-img{
+    float: right;
+}
 article > h3 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
