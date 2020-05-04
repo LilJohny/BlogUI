@@ -1,8 +1,13 @@
-.rightToolBar{
+.rightToolBar {
     margin-left: auto;
     margin-right: -12px;
 }
-.menu{
+
+.menu {
     margin-right: 16px;
     margin-left: -12px;
+}
+
+.drawer {
+    pbackground: #485461;
 }

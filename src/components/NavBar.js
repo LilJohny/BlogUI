@@ -8,10 +8,12 @@ import Drawer from "@material-ui/core/Drawer";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
-import clsx from "clsx";
 import makeStyles from "@material-ui/styles/makeStyles";
+import PropTypes from "prop-types";
+import {withStyles} from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+
+makeStyles({
     list: {
         width: 250,
     },
@@ -19,65 +21,92 @@ const useStyles = makeStyles({
         width: 'auto',
     },
 });
-export default function NavBar(props) {
-    let toolbar;
-    if (props.article === true) {
-        toolbar = <Toolbar id="back-to-top-anchor"/>;
-    } else {
-        toolbar = <Toolbar/>;
+const styles = {
+    list: {
+        width: 250
+    },
+    fullList: {
+        width: "auto"
+    },
+    paper: {
+        background: "#485461"
     }
-    const classes = useStyles();
-    const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
-    });
+};
 
-    const toggleDrawer = (open) => (event) => {
-        const anchor = 'left';
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
-        setState({...state, [anchor]: open});
+class NavBar extends React.Component {
+    state = {
+        left: false,
     };
 
-    const list = (anchor) => (
-        <div
-            className={clsx(classes.list, {
-                [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-            })}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-        >
-            <List>
-                {['Home', 'Categories', 'Interesting posts for you', 'Messages'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text}/>
-                    </ListItem>
-                ))}
-            </List>
+    toggleDrawer = (open) => () => {
+        this.setState({
+            left: open
+        });
+    };
 
+    render() {
+        let toolbar;
+        if (this.props.article === true) {
+            toolbar = <Toolbar id="back-to-top-anchor"/>;
+        } else {
+            toolbar = <Toolbar/>;
+        }
+        const {classes} = this.props;
 
-        </div>
-    );
-    return (<React.Fragment>
-        <AppBar position="sticky">
-            <Toolbar>
-                <IconButton className={"menu"} aria-label="Menu" color="white" onClick={toggleDrawer(true)}>
-                    <MenuIcon/>
-                </IconButton>
-                <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer(false)}>
-                    {list('left')}
-                </Drawer>
-                <section className={"rightToolBar"}>
-                    <IconButton className={"profile"} aria-label="My profile" color="white">
-                        <FaceIcon/>
-                    </IconButton>
-                </section>
-            </Toolbar>
-        </AppBar>
-        {toolbar}
-    </React.Fragment>);
+        const sideList = (
+            <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
+                 onKeyDown={this.toggleDrawer(false)}>
+                <List>
+                    {["Home", "Categories", "Interesting Posts For You", "Your Inbox"].map((text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemText primary={text}/>
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
+        );
+
+        return (
+            <React.Fragment>
+                <AppBar position="sticky">
+                    <Toolbar>
+                        <IconButton className={"menu"} aria-label="Menu" color="white"
+                                    onClick={this.toggleDrawer(true)}>
+                            <MenuIcon/>
+                        </IconButton>
+                        <Drawer
+                            classes={{paper: classes.paper}}
+                            open={this.state.left}
+                            onClose={this.toggleDrawer(false)}
+                        >
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                onClick={this.toggleDrawer(false)}
+                                onKeyDown={this.toggleDrawer(false)}
+                                className={{root: classes.root}}
+                            >
+                                {sideList}
+                            </div>
+                        </Drawer>
+
+                        <section className={"rightToolBar"}>
+                            <IconButton className={"profile"} aria-label="My profile" color="white">
+                                <FaceIcon/>
+                            </IconButton>
+                        </section>
+                    </Toolbar>
+                </AppBar>
+                {toolbar}
+            </React.Fragment>
+        );
+
+    }
 }
+
+NavBar.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(NavBar);
+
