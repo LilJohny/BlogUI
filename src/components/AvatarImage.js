@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     large: {
-        width: theme.spacing(50),
-        height: theme.spacing(50),
+        width: theme.spacing(25),
+        height: theme.spacing(25),
     },
     rounded: {
         color: '#fff',

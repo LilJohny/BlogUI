@@ -1,0 +1,14 @@
+.flexbox{
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex;
+    grid-column: 1/span 7;
+}
+.likedPosts{
+    grid-column: 5/span 3;
+}
+.ProfilePicture {
+
+}
