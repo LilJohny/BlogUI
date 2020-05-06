@@ -22,13 +22,13 @@ export default class ProfilePage extends React.Component {
                     <Paper>
                         <article>
                             <div className={"flexbox"}>
-                                <span><AvatarImage large={true} variant={"rounded"} className={"ProfilePicture"}
-                                    style={imageStyle} /></span>
-                                <span><h1>User`s Name : {this.props.profileName}</h1>
+                                <div><AvatarImage large={true} variant={"rounded"} className={"ProfilePicture"}
+                                    style={imageStyle} /></div>
+                                <div><h1>User`s Name : {this.props.profileName}</h1>
                                     <Button variant="outlined" color={"primary"}>Follow</Button>
                                     <h4>Joined us on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time> </h4>
                                     <p>{this.props.userBio}</p>
-                                </span>
+                                </div>
                             </div>
                             <div className={"saved"}>
                                 <h1>User saved these posts: </h1>
