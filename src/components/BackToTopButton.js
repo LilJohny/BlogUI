@@ -3,7 +3,7 @@ import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Zoom from "@material-ui/core/Zoom";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ScrollTop(props) {
-    const {children} = props;
+    const { children } = props;
     const classes = useStyles();
     const trigger = useScrollTrigger({
         disableHysteresis: true,
@@ -27,7 +27,7 @@ function ScrollTop(props) {
         );
 
         if (anchor) {
-            anchor.scrollIntoView({behavior: "smooth", block: "center"});
+            anchor.scrollIntoView({ behavior: "smooth", block: "center" });
         }
     };
 
@@ -44,7 +44,7 @@ export default class BackToTopButton extends React.Component {
     render() {
         return (<ScrollTop>
             <Fab color="secondary" size="small" aria-label="scroll back to top">
-                <KeyboardArrowUpIcon/>
+                <KeyboardArrowUpIcon />
             </Fab>
         </ScrollTop>);
     }

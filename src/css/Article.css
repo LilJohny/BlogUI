@@ -3,56 +3,61 @@
     height: fit-content;
 }
 
-article > * {
+article>* {
     min-width: 0;
     margin-left: 0;
     margin-right: 0;
     grid-column: 4;
 }
 
-article > h1 {
+article>h1 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
 
-article > h2 {
+article>h2 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
-.subtitle{
+
+.subtitle {
     color: grey;
 }
-.MuiAvatar-img{
+
+.MuiAvatar-img {
     float: right;
 }
-article > h3 {
+
+article>h3 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
 
-article > h4 {
+article>h4 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
 
-article > h5 {
+article>h5 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
 
-article > h6 {
+article>h6 {
     font-family: "Lucida Grande", sans-serif;
     grid-column: 3 / span 3;
     text-align: center;
 }
 
 
-article > ul > li > p, article > p, .link {
+article>ul>li>p,
+article>p,
+.link {
     --x-height-multiplier: 0.375;
     --baseline-multiplier: 0.17;
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -78,7 +83,7 @@ article > ul > li > p, article > p, .link {
     border-radius: 3px;
 }
 
-article > ul {
+article>ul {
     align-self: center;
     grid-column: 3 / span 3;
 }
@@ -105,31 +110,35 @@ article {
     grid-template-columns: 1fr 1fr 10px 440px 10px 1fr 1fr;
 }
 
-article > figure {
+article>figure {
     grid-column: 1/-1;
     margin: 20px;
 }
 
-article > .aside {
+article>.aside {
     grid-column: 5/-1;
 }
+
 .ArticleImage {
     grid-column: 1/span 7;
 }
 
-article > blockquote {
+article>blockquote {
     grid-column: 3 / span 3;
     margin: 0;
     color: #666;
     border-left: 3px solid black;
     padding-left: 10px;
 }
-article>img{
+
+article>img {
     grid-column: 2 / span 4;
 }
-article>.ArticleData{
+
+article>.ArticleData {
     grid-column: 2 / span 4;
 }
+
 pre {
     grid-column: 2 / span 5;
 }

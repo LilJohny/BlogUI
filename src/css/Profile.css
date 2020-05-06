@@ -1,17 +1,20 @@
-.flexbox{
-    display:-webkit-box;
-    display:-moz-box;
-    display:-ms-flexbox;
-    display:-webkit-flex;
-    display:flex;
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     grid-column: 1/span 7;
 }
-.likedPosts{
+
+.likedPosts {
     grid-column: 5/span 3;
 }
-.saved{
+
+.saved {
     grid-column: 1/span 2;
 }
-.profile{
+
+.profile {
     height: 100%;
 }
