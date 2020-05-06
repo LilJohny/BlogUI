@@ -14,9 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ListItemLink(props) {
-    return <ListItem button component="a" {...props} />;
-}
+
 
 export default function IconsList(props) {
     const classes = useStyles();
@@ -27,7 +25,6 @@ export default function IconsList(props) {
                 {props.list.map((text, index) => (
                     <ListItem button>
                         <ListItemIcon>
-
                             <DraftsIcon />
                         </ListItemIcon>
                         <ListItemText primary={text[0]} />
