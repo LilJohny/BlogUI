@@ -1,0 +1,19 @@
+div>div>div>div>img {
+    float: right;
+}
+
+.AuthorDate {
+    margin-left: auto;
+}
+
+.ArticleData {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.time {
+    color: grey;
+}

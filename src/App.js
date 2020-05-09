@@ -1,26 +1,23 @@
-import React from 'react';
 import logo from './logo.svg';
-import './css/App.css';
+import 'typeface-roboto';
+import './css/App.css'
+import React from 'react';
+import ArticlePage from "./pages/article";
+import ProfilePage from "./pages/profile";
+import { MuiThemeProvider } from "material-ui";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <MuiThemeProvider>
+            <div className="App">
+                <CssBaseline />
+                <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}
+                    userBio={"Example of User Bio. Here User can write about himself."} />
+            </div>
+        </MuiThemeProvider>
+    );
 }
 
 export default App;
