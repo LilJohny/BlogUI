@@ -1,6 +1,6 @@
 
 ---
-#Implemeted pages are stored inside src/pages directory
+# Implemeted pages are stored inside src/pages directory
 # List of implemented pages:
 *  Article page
 *  Profile page
