@@ -1,17 +1,19 @@
 import React from 'react';
-import { AppBar, Toolbar } from '@material-ui/core';
+import {AppBar, Toolbar} from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import '../css/NavBar.css';
 import Drawer from "@material-ui/core/Drawer";
 import ListItemText from "@material-ui/core/ListItemText";
+import Link from "@material-ui/core/Link";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import { BrowserRouter as Router } from "react-router-dom";
+import {withStyles} from "@material-ui/core/styles";
+import {BrowserRouter as Router} from "react-router-dom";
+
 
 
 makeStyles({
@@ -48,19 +50,20 @@ class NavBar extends React.Component {
     render() {
         let toolbar;
         if (this.props.article === true) {
-            toolbar = <Toolbar id="back-to-top-anchor" />;
+            toolbar = <Toolbar id="back-to-top-anchor"/>;
         } else {
-            toolbar = <Toolbar />;
+            toolbar = <Toolbar/>;
         }
-        const { classes } = this.props;
+        const {classes} = this.props;
 
         const sideList = (
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
-                onKeyDown={this.toggleDrawer(false)}>
+                 onKeyDown={this.toggleDrawer(false)}>
                 <List>
-                    {["Home", "Categories", "Interesting Posts For You", "Your Inbox"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText primary={text} />
+                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "inbox"]].map((text, index) => (
+                        <ListItem button key={text[0]}>
+
+                            <Link href={text[1]}>{text[0]}</Link>
                         </ListItem>
                     ))}
                 </List>
@@ -73,11 +76,11 @@ class NavBar extends React.Component {
                     <AppBar position="sticky">
                         <Toolbar>
                             <IconButton className={"menu"} aria-label="Menu" color="white"
-                                onClick={this.toggleDrawer(true)}>
-                                <MenuIcon />
+                                        onClick={this.toggleDrawer(true)}>
+                                <MenuIcon/>
                             </IconButton>
                             <Drawer
-                                classes={{ paper: classes.paper }}
+                                classes={{paper: classes.paper}}
                                 open={this.state.left}
                                 onClose={this.toggleDrawer(false)}
                             >
@@ -86,7 +89,7 @@ class NavBar extends React.Component {
                                     role="button"
                                     onClick={this.toggleDrawer(false)}
                                     onKeyDown={this.toggleDrawer(false)}
-                                    className={{ root: classes.root }}
+                                    className={{root: classes.root}}
                                 >
                                     {sideList}
                                 </div>
@@ -94,7 +97,7 @@ class NavBar extends React.Component {
 
                             <section className={"rightToolBar"}>
                                 <IconButton className={"profile"} aria-label="My profile" color="white" href="/profile">
-                                    <FaceIcon />
+                                    <FaceIcon/>
                                 </IconButton>
                             </section>
                         </Toolbar>
