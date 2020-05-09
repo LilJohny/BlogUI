@@ -6,7 +6,7 @@ import ArticlePage from "./pages/article";
 import ProfilePage from "./pages/profile";
 import { MuiThemeProvider } from "material-ui";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 function App() {

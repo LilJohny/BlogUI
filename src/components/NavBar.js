@@ -11,8 +11,8 @@ import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ProfilePage from '../pages/profile';
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 makeStyles({
     list: {
@@ -100,7 +100,7 @@ class NavBar extends React.Component {
                         </Toolbar>
                     </AppBar>
                     {toolbar}
-                    
+
                 </Router>
             </React.Fragment>
         );

@@ -1,17 +1,18 @@
 import React from 'react';
 import '../css/Article.css';
-import NavBar from "../components/NavBar";
 import { Paper } from "material-ui";
 import Container from "@material-ui/core/Container";
 import BackToTopButton from "../components/BackToTopButton";
 import ArticleImage from "../components/ArticleImage";
 import ArticleData from "../components/ArticleData";
+import { Toolbar } from '@material-ui/core';
 
 
 export default class ArticlePage extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Toolbar id="back-to-top-anchor" />;
                 <Container>
                     <Paper>
                         <article>
