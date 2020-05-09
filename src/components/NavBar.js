@@ -11,7 +11,8 @@ import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ProfilePage from '../pages/profile';
 
 makeStyles({
     list: {
@@ -68,36 +69,39 @@ class NavBar extends React.Component {
 
         return (
             <React.Fragment>
-                <AppBar position="sticky">
-                    <Toolbar>
-                        <IconButton className={"menu"} aria-label="Menu" color="white"
-                            onClick={this.toggleDrawer(true)}>
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                            classes={{ paper: classes.paper }}
-                            open={this.state.left}
-                            onClose={this.toggleDrawer(false)}
-                        >
-                            <div
-                                tabIndex={0}
-                                role="button"
-                                onClick={this.toggleDrawer(false)}
-                                onKeyDown={this.toggleDrawer(false)}
-                                className={{ root: classes.root }}
-                            >
-                                {sideList}
-                            </div>
-                        </Drawer>
-
-                        <section className={"rightToolBar"}>
-                            <IconButton className={"profile"} aria-label="My profile" color="white">
-                                <FaceIcon />
+                <Router>
+                    <AppBar position="sticky">
+                        <Toolbar>
+                            <IconButton className={"menu"} aria-label="Menu" color="white"
+                                onClick={this.toggleDrawer(true)}>
+                                <MenuIcon />
                             </IconButton>
-                        </section>
-                    </Toolbar>
-                </AppBar>
-                {toolbar}
+                            <Drawer
+                                classes={{ paper: classes.paper }}
+                                open={this.state.left}
+                                onClose={this.toggleDrawer(false)}
+                            >
+                                <div
+                                    tabIndex={0}
+                                    role="button"
+                                    onClick={this.toggleDrawer(false)}
+                                    onKeyDown={this.toggleDrawer(false)}
+                                    className={{ root: classes.root }}
+                                >
+                                    {sideList}
+                                </div>
+                            </Drawer>
+
+                            <section className={"rightToolBar"}>
+                                <IconButton className={"profile"} aria-label="My profile" color="white" href="/profile">
+                                    <FaceIcon />
+                                </IconButton>
+                            </section>
+                        </Toolbar>
+                    </AppBar>
+                    {toolbar}
+                    
+                </Router>
             </React.Fragment>
         );
 

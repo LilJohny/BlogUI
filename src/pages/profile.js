@@ -17,7 +17,6 @@ export default class ProfilePage extends React.Component {
         };
         return (
             <React.Fragment>
-                <NavBar />
                 <Container className={"profile"}>
                     <Paper>
                         <article>

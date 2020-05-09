@@ -12,7 +12,6 @@ export default class ArticlePage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar article={true} />
                 <Container>
                     <Paper>
                         <article>
