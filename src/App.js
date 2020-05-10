@@ -8,6 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/home";
+import InboxPage from "./pages/inbox";
 
 function App() {
     return (
@@ -52,6 +53,16 @@ function App() {
                                 title={"Introducing \"Dead Simple Python\"\n"}
                                 subtitle={"Introduction"}
                             />
+                        </Route>
+                        <Route path="/inbox">
+                            <InboxPage name={"Denis"} surname={"Ivanenko"}
+                                       messages={[{
+                                           author: "Bill Gates",
+                                           text: "Hi, how are you?"
+                                       }, {author: "Bill Gates", text: "Hi, how are you?"}, {
+                                           author: "Bill Gates",
+                                           text: "Hi, how are you?"
+                                       }, {author: "Bill Gates", text: "Hi, how are you?"}]}/>
                         </Route>
                         <Route path="/">
                             <HomePage/>
