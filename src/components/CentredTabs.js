@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import * as PropTypes from "prop-types";
 import ArticlesList from "./ArticlesList";
+import AuthorsList from "./AuthorsList";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -171,7 +172,14 @@ export default function CenteredTabs(props) {
                     }]}/>
                 </TabPanel>
                 <TabPanel value={value} index={2} className={classes.tabPanel}>
-                    Item Four
+                    <AuthorsList authors={[{
+                        name: "Denis Ivanenko",
+                        bio: "This is my test bio. It`s not really as long as it will be for real user, but for testing it`s just OK.",
+                        link: "/profile",
+                        reputation: "361",
+                        authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
+                        authorImageAlt: "Author Image"
+                    }]}/>
                 </TabPanel>
             </article>
         </Paper>
