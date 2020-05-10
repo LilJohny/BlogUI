@@ -7,9 +7,9 @@ export default class ArticleData extends React.Component {
         return (
             <div className="ArticleData">
                 <div><AvatarImage className={"pic"} src={this.props.imageSrc} alt={this.props.imageAlt}
-                    variant={"circle"} /></div>
+                                  variant={"circle"}/></div>
                 <div><p>{this.props.authorName}</p>
-                    <p>Posted on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time> </p>
+                    <p>Posted on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time></p>
                 </div>
             </div>
         );
