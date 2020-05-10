@@ -1,16 +1,16 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ArticleImage from "./ArticleImage";
-import Container from "@material-ui/core/Container";
 import ArticleData from "./ArticleData";
+import {Paper} from "material-ui";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         maxWidth: 360,
         backgroundColor: theme.palette.background.paper,
+        gridColumn: "3/span 5"
     },
     marginAutoContainer: {
         width: 500,
@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme) => ({
     },
     marginAutoItem: {
         margin: 'auto'
+    },
+    paper: {
+        width: "100%",
+        gridColumn: "1/span 7"
+    },
+    article_box: {
+        gridColumn: "1/span 7"
     }
 }));
 
@@ -29,19 +36,27 @@ export default function ArticlesList(props) {
     return (
         <React.Fragment>
             <div className={classes.root}>
+                <article>
+                    <List component="nav" aria-label="secondary mailbox folders">
+                        <Paper className={classes.paper}>
+                            {props.articles.map((article, index) => (
 
-                <List component="nav" aria-label="secondary mailbox folders">
-                    {props.articles.map((article, index) => (
-                        <Container>
-                            <ListItem button key={index}>
-                                <ArticleImage className={"ArticleImage"} src={article.imageSrc}
-                                              alt={article.imageAlt}/>
-                                <ArticleData imageSrc={article.authorImageSrc} alt={article.authorImageAlt}
-                                             variant={"circle"} authorName={article.authorName}
-                                             dateTime={article.dateTime}/>
-                            </ListItem>
-                        </Container>))}
-                </List>
+
+                                <div className={classes.article_box}>
+                                    <h1>{article.title}</h1>
+                                    <h2 className={"subtitle"}>{article.subtitle}</h2>
+                                    <ArticleImage className={"ArticleImage"} src={article.imageSrc}
+                                                  alt={article.articleimageAlt}/>
+                                    <ArticleData imageSrc={props.authorImageSrc}
+                                                 alt={article.authorImageAlt}
+                                                 variant={"circle"} authorName={article.authorName}
+                                                 dateTime={article.dateTime}/>
+                                </div>
+
+                            ))}
+                        </Paper>
+                    </List>
+                </article>
             </div>
         </React.Fragment>
     );

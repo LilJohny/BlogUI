@@ -12,6 +12,7 @@ div>div>div>div>img {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    height: fit-content;
 }
 
 .time {
