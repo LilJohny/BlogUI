@@ -42,7 +42,10 @@ function App() {
                                 "The official end-of-life for Python 2 is rapidly approaching, so you should learn and begin using Python 3 as soon as possible! This entire series is geared towards Python 3, with a bias towards 3.6 and 3.7, except as otherwise noted.\n" +
                                 "\n" +
                                 "Edits\n" +
-                                "The articles in this series are frequently being reviewed by my fellow Python experts, and by the Dev community at large. I will expand and revise accordingly. Always check the edit timestamp at the top of the article."}
+                                "The articles in this series are frequently being reviewed by my fellow Python experts, and by the Dev community at large. I will expand and revise accordingly. Always check the edit timestamp at the top of the article.\n" +
+                                "\n" +
+                                "Roadmap\n" +
+                                "The current series plan is below. Please note, I may rearrange, add, or remove planned sections."}
                                 authorImageSrc={"https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64"}
                                 authorName={"Denis Ivanenko"}
                                 dateTime={"2017-02-14"}

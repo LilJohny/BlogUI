@@ -3,4 +3,5 @@
     background: -webkit-linear-gradient(to right, #29323c, #485563);
     background: linear-gradient(to right, #29323c, #485563);
     height: 100%;
+    width: 100vw;
 }

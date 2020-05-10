@@ -16,7 +16,7 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "100%",
+        width: "155%",
     },
     media: {
         height: 0,
@@ -43,7 +43,7 @@ export default function ArticleCard(props) {
     const date = props.dateTime;
     const imageSrc = props.imageSrc;
     const imageAlt = props.imageAlt;
-    const previewText = props.text.substring(0, 158) + "...";
+    const previewText = props.text.substring(0, 163) + "...";
 
     return (
         <React.Fragment>
@@ -80,7 +80,7 @@ export default function ArticleCard(props) {
                         })}
                         aria-expanded={expanded}
                         aria-label="show more"
-                        href={"/article"}
+                        href={props.link}
                     >
                         Read Full Article
                     </Button>
