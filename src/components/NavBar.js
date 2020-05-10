@@ -5,15 +5,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import '../css/NavBar.css';
 import Drawer from "@material-ui/core/Drawer";
-import Link from "@material-ui/core/Link";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
 import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 import {BrowserRouter as Router} from "react-router-dom";
-
-
+import ListItemText from "@material-ui/core/ListItemText";
 
 makeStyles({
     list: {
@@ -59,10 +57,9 @@ class NavBar extends React.Component {
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
                  onKeyDown={this.toggleDrawer(false)}>
                 <List>
-                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "inbox"]].map((text, index) => (
-                        <ListItem button key={text[0]}>
-
-                            <Link href={text[1]}>{text[0]}</Link>
+                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "inbox"]].map((text) => (
+                        <ListItem component="a" button key={text[0]} href={text[1]}>
+                            <ListItemText>{text[0]}</ListItemText>
                         </ListItem>
                     ))}
                 </List>
