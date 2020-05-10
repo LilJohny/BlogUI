@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/home";
 import InboxPage from "./pages/inbox";
+import InterestingPage from "./pages/interesting";
 
 function App() {
     return (
@@ -53,6 +54,9 @@ function App() {
                                 title={"Introducing \"Dead Simple Python\"\n"}
                                 subtitle={"Introduction"}
                             />
+                        </Route>
+                        <Route path="/interesting">
+                            <InterestingPage/>
                         </Route>
                         <Route path="/inbox">
                             <InboxPage name={"Denis"} surname={"Ivanenko"}
