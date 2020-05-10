@@ -72,7 +72,8 @@ export default function CenteredTabs(props) {
                         imageSrc: "https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg",
                         authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
                         authorName: "Denis Ivanenko",
-                        dateTime: "2017-02-14"
+                        dateTime: "2017-02-14",
+                        imageAlt:"Article Image"
                     }]}/>
                 </article>
             </TabPanel>

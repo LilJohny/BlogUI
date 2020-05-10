@@ -2,7 +2,9 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ArticlePreview from "./ArticlePreview";
+import ArticleImage from "./ArticleImage";
+import Container from "@material-ui/core/Container";
+import ArticleData from "./ArticleData";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,11 +32,15 @@ export default function ArticlesList(props) {
 
                 <List component="nav" aria-label="secondary mailbox folders">
                     {props.articles.map((article, index) => (
-                        <ListItem button key={index}>
-                            <ArticlePreview imageSrc={article.authorImageSrc} alt={article.authorImageAlt}
-                                            variant={"circle"} authorName={article.authorName}
-                                            dateTime={article.dateTime}/>
-                        </ListItem>))}
+                        <Container>
+                            <ListItem button key={index}>
+                                <ArticleImage className={"ArticleImage"} src={article.imageSrc}
+                                              alt={article.imageAlt}/>
+                                <ArticleData imageSrc={article.authorImageSrc} alt={article.authorImageAlt}
+                                             variant={"circle"} authorName={article.authorName}
+                                             dateTime={article.dateTime}/>
+                            </ListItem>
+                        </Container>))}
                 </List>
             </div>
         </React.Fragment>
