@@ -12,7 +12,10 @@ const useStyles = makeStyles((theme) => ({
         marginRight: "auto"
     },
     centered: {
-        textAlign: "center"
+        textAlign: "center",
+        gridColumn: "1/span 7",
+        marginRight: "auto",
+        marginLeft: "auto"
     }
 }));
 
@@ -21,7 +24,7 @@ export default function InterestingPage() {
     return (
         <Paper className={classes.root}>
             <h1 className={classes.centered}>Interesting Posts For You: </h1>
-            <ArticlesList articles={[{
+            <ArticlesList className={classes.centered} articles={[{
                 imageSrc: "https://insights.dice.com/wp-content/uploads/2017/09/shutterstock_315465929.jpg",
                 authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
                 authorName: "Denis Ivanenko",

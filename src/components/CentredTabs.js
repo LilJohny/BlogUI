@@ -37,6 +37,9 @@ TabPanel.propTypes = {
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
+        maxWidth:550,
+        marginRight:"auto",
+        marginLeft:"auto"
     },
     tabPanel: {
         marginLeft: "auto",
