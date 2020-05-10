@@ -57,7 +57,7 @@ class NavBar extends React.Component {
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
                  onKeyDown={this.toggleDrawer(false)}>
                 <List>
-                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "inbox"]].map((text) => (
+                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]].map((text) => (
                         <ListItem component="a" button key={text[0]} href={text[1]}>
                             <ListItemText>{text[0]}</ListItemText>
                         </ListItem>
