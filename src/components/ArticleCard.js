@@ -82,7 +82,7 @@ export default function ArticleCard(props) {
                         aria-label="show more"
                         href={"/article"}
                     >
-                        Read More
+                        Read Full Article
                     </Button>
                 </CardActions>
             </Card>

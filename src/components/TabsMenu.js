@@ -80,7 +80,7 @@ export default function CenteredTabs(props) {
                         authorName: "Denis Ivanenko",
                         dateTime: "2017-02-14",
                         imageAlt: "Article Image",
-                        title: "Test title",
+                        title: "Test ttle",
                         subtitle: "Test subtitle"
                     }]}/>
 

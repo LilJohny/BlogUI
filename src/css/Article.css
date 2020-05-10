@@ -121,6 +121,7 @@ article>.aside {
 
 .ArticleImage {
     grid-column: 1/span 7;
+
 }
 
 article>blockquote {
@@ -133,6 +134,7 @@ article>blockquote {
 
 article>img {
     grid-column: 2 / span 4;
+    max-height: 10%;
 }
 
 article>.ArticleData {
