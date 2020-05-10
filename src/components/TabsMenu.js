@@ -37,8 +37,8 @@ const useStyles = makeStyles({
     root: {
         flexGrow: 1,
     },
-    paper: {
-        width: "max-content"
+    tabpanel: {
+        marginLeft: "auto"
     }
 });
 
@@ -71,7 +71,7 @@ export default function CenteredTabs(props) {
                     <Tab label="News" {...a11yProps(1)}/>
                     <Tab label="Authors" {...a11yProps(2)}/>
                 </Tabs>
-                <TabPanel value={value} index={0}>
+                <TabPanel value={value} index={0} className={classes.tabpanel}>
 
                     <ArticlesList articles={[{
                         imageSrc: "https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg",
@@ -84,10 +84,10 @@ export default function CenteredTabs(props) {
                     }]}/>
 
                 </TabPanel>
-                <TabPanel value={value} index={1}>
+                <TabPanel value={value} index={1} className={classes.tabpanel}>
                     Item Two
                 </TabPanel>
-                <TabPanel value={value} index={2}>
+                <TabPanel value={value} index={2} className={classes.tabpanel}>
                     Item Three
                 </TabPanel>
             </article>
