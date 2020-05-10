@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import * as PropTypes from "prop-types";
+import ArticlesList from "./ArticlesList";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -13,7 +14,7 @@ function TabPanel(props) {
         <div
             role="tabpanel"
             hidden={value !== index}
-            id={`sinple-tab-${index}`}
+            id={`simple-tab-${index}`}
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
@@ -45,7 +46,7 @@ function a11yProps(index) {
     };
 }
 
-export default function CenteredTabs() {
+export default function CenteredTabs(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
@@ -60,12 +61,18 @@ export default function CenteredTabs() {
                 textColor="primary"
                 centered
             >
-                <Tab label="Item One" {...a11yProps(0)}/>
-                <Tab label="Item Two" {...a11yProps(1)}/>
-                <Tab label="Item Three" {...a11yProps(2)}/>
+
+                <Tab label="Articles" {...a11yProps(0)}/>
+                <Tab label="News" {...a11yProps(1)}/>
+                <Tab label="Authors" {...a11yProps(2)}/>
             </Tabs>
             <TabPanel value={value} index={0}>
-                Item One
+                <ArticlesList articles={[{
+                    imageSrc: "https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg",
+                    authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
+                    authorName: "Denis Ivanenko",
+                    dateTime: "2017-02-14"
+                }]}/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Item Two
