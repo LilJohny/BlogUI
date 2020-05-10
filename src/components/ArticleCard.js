@@ -16,7 +16,7 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width:"100%",
+        width: "100%",
     },
     media: {
         height: 0,
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: red[500],
     },
 }));
+
 export default function ArticleCard(props) {
     const classes = useStyles();
     const [expanded] = React.useState(false);
@@ -42,47 +43,49 @@ export default function ArticleCard(props) {
     const date = props.dateTime;
     const imageSrc = props.imageSrc;
     const imageAlt = props.imageAlt;
-    const previewText = props.text.substring(0,158)+"...";
+    const previewText = props.text.substring(0, 158) + "...";
 
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        <img src={props.authorImageSrc} alt={props.authorName}/>
-                    </Avatar>
-                }
-                title={title}
-                subheader={date}
-            />
-            <CardMedia
-                className={classes.media}
-                image={imageSrc}
-                title={imageAlt}
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {previewText}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon/>
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon/>
-                </IconButton>
-                <Button
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
-                    })}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    href={"/article"}
-                >
-                    Read More
-                </Button>
-            </CardActions>
-        </Card>
+        <React.Fragment>
+            <Card className={classes.root}>
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="recipe" className={classes.avatar}>
+                            <img src={props.authorImageSrc} alt={props.authorName}/>
+                        </Avatar>
+                    }
+                    title={title}
+                    subheader={date}
+                />
+                <CardMedia
+                    className={classes.media}
+                    image={imageSrc}
+                    title={imageAlt}
+                />
+                <CardContent>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {previewText}
+                    </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                        <FavoriteIcon/>
+                    </IconButton>
+                    <IconButton aria-label="share">
+                        <ShareIcon/>
+                    </IconButton>
+                    <Button
+                        className={clsx(classes.expand, {
+                            [classes.expandOpen]: expanded,
+                        })}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        href={"/article"}
+                    >
+                        Read More
+                    </Button>
+                </CardActions>
+            </Card>
+        </React.Fragment>
     );
 }
