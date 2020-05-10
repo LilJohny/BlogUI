@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 export default function IconsList(props) {
     const classes = useStyles();
 
@@ -23,11 +22,11 @@ export default function IconsList(props) {
         <div className={classes.root}>
             <List component="nav" aria-label="main mailbox folders">
                 {props.list.map((text, index) => (
-                    <ListItem button>
+                    <ListItem button key={index}>
                         <ListItemIcon>
-                            <DraftsIcon />
+                            <DraftsIcon/>
                         </ListItemIcon>
-                        <ListItemText primary={text[0]} />
+                        <ListItemText primary={text[0]}/>
                     </ListItem>
                 ))}
             </List>
