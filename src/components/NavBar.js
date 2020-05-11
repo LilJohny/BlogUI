@@ -92,7 +92,7 @@ class NavBar extends React.Component {
                             </Drawer>
 
                             <section className={"rightToolBar"}>
-                                <IconButton className={"profile"} aria-label="My profile" color="white" href="/profile">
+                                <IconButton className={"profile"} aria-label="My profile" color={"black"} href="/profile">
                                     <FaceIcon/>
                                 </IconButton>
                             </section>

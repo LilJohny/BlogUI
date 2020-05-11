@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import HomePage from "./pages/home";
 import InboxPage from "./pages/inbox";
 import InterestingPage from "./pages/interesting";
+import CategoriesPage from "./pages/categories";
 
 function App() {
     return (
@@ -54,6 +55,9 @@ function App() {
                                 title={"Introducing \"Dead Simple Python\"\n"}
                                 subtitle={"Introduction"}
                             />
+                        </Route>
+                        <Route path="/categories">
+                            <CategoriesPage/>
                         </Route>
                         <Route path="/interesting">
                             <InterestingPage/>
