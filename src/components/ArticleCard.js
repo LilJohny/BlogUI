@@ -1,5 +1,4 @@
 import React from "react";
-import {red} from '@material-ui/core/colors';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -27,12 +26,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
-        }),
-    },
-
-    avatar: {
-        backgroundColor: red[500],
-    },
+        })
+    }
 }));
 
 export default function ArticleCard(props) {
@@ -50,7 +45,7 @@ export default function ArticleCard(props) {
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" className={classes.avatar}>
+                        <Avatar aria-label="recipe" >
                             <img src={props.authorImageSrc} alt={props.authorName}/>
                         </Avatar>
                     }
