@@ -63,7 +63,7 @@ export default function ArticleCard(props) {
                     title={imageAlt}
                 />
                 <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="span">
                         {previewText}
                     </Typography>
                 </CardContent>
