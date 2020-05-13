@@ -45,9 +45,7 @@ export default function ArticleCard(props) {
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" >
-                            <img src={props.authorImageSrc} alt={props.authorName}/>
-                        </Avatar>
+                        <Avatar aria-label="recipe" src={props.authorImageSrc} alt={props.authorName}/>
                     }
                     title={title}
                     subheader={date}
