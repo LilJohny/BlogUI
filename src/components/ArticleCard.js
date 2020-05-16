@@ -15,7 +15,7 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "155%",
+        width: "100%",
     },
     media: {
         height: 0,
