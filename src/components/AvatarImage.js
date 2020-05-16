@@ -1,7 +1,7 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import {green} from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,7 +27,7 @@ export default function AvatarImage(props) {
         <React.Fragment>
             <div className={classes.root}>
                 <Avatar variant={props.variant} className={classNames}>
-                    <img src={props.src} alt={props.alt}/>
+                    <img src={props.src} alt={props.alt} />
                 </Avatar>
             </div>
         </React.Fragment>
