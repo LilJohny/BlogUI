@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }))
 ;
 
-export default function ArticleCard(props) {
+export default function AuthorCard(props) {
     const classes = useStyles();
     const [expanded] = React.useState(false);
 
