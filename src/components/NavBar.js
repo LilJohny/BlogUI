@@ -52,12 +52,12 @@ class NavBar extends React.Component {
             toolbar = <Toolbar/>;
         }
         const {classes} = this.props;
-
+        navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];
         const sideList = (
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
                  onKeyDown={this.toggleDrawer(false)}>
                 <List>
-                    {[["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]].map((text) => (
+                    {navbar_links.map((text) => (
                         <ListItem component="a" button key={text[0]} href={text[1]}>
                             <ListItemText>{text[0]}</ListItemText>
                         </ListItem>
