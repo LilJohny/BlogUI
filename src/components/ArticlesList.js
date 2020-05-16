@@ -22,13 +22,7 @@ export default function ArticlesList(props) {
             <List component="nav" aria-label="secondary mailbox folders">
                 {articles.map((article) =>
                     <ListItem key={article.title}>
-                        <ArticleCard title={article.title}
-                                     text={article.text}
-                                     imageSrc={article.imageSrc}
-                                     authorImageSrc={article.authorImageSrc}
-                                     authorName={article.authorName}
-                                     link={article.link}
-                        />
+                        <ArticleCard {...article}/>
                     </ListItem>)}
             </List>
         </div>
