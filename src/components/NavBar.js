@@ -47,7 +47,7 @@ class NavBar extends React.Component {
     render() {
         let toolbar;
         toolbar = this.props.article === true ? toolbar = <Toolbar id="back-to-top-anchor" /> : <Toolbar />;
-        
+
         const { classes } = this.props;
         const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];
         const sideList = (

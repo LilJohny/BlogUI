@@ -1,5 +1,5 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -10,9 +10,9 @@ import TabPanel from "./TabPanel";
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
-        maxWidth:550,
-        marginRight:"auto",
-        marginLeft:"auto"
+        maxWidth: 550,
+        marginRight: "auto",
+        marginLeft: "auto"
     },
     tabPanel: {
         marginLeft: "auto",
@@ -46,9 +46,9 @@ export default function CenteredTabs(props) {
                     centered
                 >
 
-                    <Tab label="Articles" {...a11yProps(0)}/>
-                    <Tab label="News" {...a11yProps(1)}/>
-                    <Tab label="Authors" {...a11yProps(2)}/>
+                    <Tab label="Articles" {...a11yProps(0)} />
+                    <Tab label="News" {...a11yProps(1)} />
+                    <Tab label="Authors" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0} className={classes.tabPanel}>
 
@@ -83,7 +83,7 @@ export default function CenteredTabs(props) {
                             "Roadmap\n" +
                             "The current series plan is below. Please note, I may rearrange, add, or remove planned sections.",
                         link: "/article"
-                    }]}/>
+                    }]} />
 
                 </TabPanel>
                 <TabPanel value={value} index={1} className={classes.tabPanel}>
@@ -145,7 +145,7 @@ export default function CenteredTabs(props) {
                             "\n" +
                             "We still have many exciting features planned and feedback is always welcome! Please feel free to open a GitHub issue or tag @reactjs on Twitter.",
                         link: "/"
-                    }]}/>
+                    }]} />
                 </TabPanel>
                 <TabPanel value={value} index={2} className={classes.tabPanel}>
                     <AuthorsList authors={[{
@@ -155,7 +155,7 @@ export default function CenteredTabs(props) {
                         reputation: "361",
                         authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
                         authorImageAlt: "Author Image"
-                    }]}/>
+                    }]} />
                 </TabPanel>
             </article>
         </Paper>

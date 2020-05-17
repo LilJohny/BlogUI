@@ -1,8 +1,8 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ArticleCard from "./ArticleCard";
-import {ListItem} from "@material-ui/core";
+import { ListItem } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +22,7 @@ export default function ArticlesList(props) {
             <List component="nav" aria-label="secondary mailbox folders">
                 {articles.map((article) =>
                     <ListItem key={article.title}>
-                        <ArticleCard {...article}/>
+                        <ArticleCard {...article} />
                     </ListItem>)}
             </List>
         </div>

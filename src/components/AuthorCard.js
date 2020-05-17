@@ -1,5 +1,5 @@
 import React from "react";
-import {red} from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -13,26 +13,26 @@ import ShareIcon from '@material-ui/icons/Share';
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-        root: {
-            width: "155%",
-        },
-        media: {
-            height: 0,
-            paddingTop: '56%',
-        },
-        expand: {
-            transform: 'rotate(0deg)',
-            marginLeft: 'auto',
-            transition: theme.transitions.create('transform', {
-                duration: theme.transitions.duration.shortest,
-            }),
-        },
+    root: {
+        width: "155%",
+    },
+    media: {
+        height: 0,
+        paddingTop: '56%',
+    },
+    expand: {
+        transform: 'rotate(0deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest,
+        }),
+    },
 
-        avatar: {
-            backgroundColor: red[500],
-        }
-    }))
-;
+    avatar: {
+        backgroundColor: red[500],
+    }
+}))
+    ;
 
 export default function AuthorCard(props) {
     const classes = useStyles();
@@ -51,7 +51,7 @@ export default function AuthorCard(props) {
                     <CardHeader
                         avatar={
                             <Avatar aria-label="recipe" className={classes.avatar}>
-                                <img src={authorImageSrc} alt={imageAlt}/>
+                                <img src={authorImageSrc} alt={imageAlt} />
                             </Avatar>
                         }
                         title={name}
@@ -66,7 +66,7 @@ export default function AuthorCard(props) {
                 </div>
                 <CardActions disableSpacing>
                     <IconButton aria-label="share">
-                        <ShareIcon/>
+                        <ShareIcon />
                     </IconButton>
                     <Button
                         className={clsx(classes.expand, {

@@ -45,7 +45,7 @@ export default function ArticleCard(props) {
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" src={props.authorImageSrc} alt={props.authorName}/>
+                        <Avatar aria-label="recipe" src={props.authorImageSrc} alt={props.authorName} />
                     }
                     title={title}
                     subheader={date}
@@ -62,10 +62,10 @@ export default function ArticleCard(props) {
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
-                        <FavoriteIcon/>
+                        <FavoriteIcon />
                     </IconButton>
                     <IconButton aria-label="share">
-                        <ShareIcon/>
+                        <ShareIcon />
                     </IconButton>
                     <Button
                         className={clsx(classes.expand, {

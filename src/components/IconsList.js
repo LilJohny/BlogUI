@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -24,9 +24,9 @@ export default function IconsList(props) {
                 {props.list.map((text, index) => (
                     <ListItem button key={index}>
                         <ListItemIcon>
-                            <DraftsIcon/>
+                            <DraftsIcon />
                         </ListItemIcon>
-                        <ListItemText primary={text[0]}/>
+                        <ListItemText primary={text[0]} />
                     </ListItem>
                 ))}
             </List>
