@@ -4,6 +4,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Zoom from "@material-ui/core/Zoom";
 import { makeStyles } from "@material-ui/core/styles";
+import NavBar from "./NavBar";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -22,8 +23,8 @@ function ScrollTop(props) {
     });
 
     const handleClick = event => {
-        const anchor = (event.target.ownerDocument || document).getElementById("back-to-top-anchor");
-
+        const anchor = NavBar.toolbar;
+        console.log(NavBar.refs);
         if (anchor) {
             anchor.scrollIntoView({ behavior: "smooth", block: "center" });
         }

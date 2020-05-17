@@ -18,7 +18,6 @@ function App() {
             <div className="App">
                 <Router>
                     <CssBaseline/>
-                    <NavBar/>
                     <Switch>
                         <Route path="/profile">
                             <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}

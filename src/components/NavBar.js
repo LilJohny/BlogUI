@@ -34,6 +34,10 @@ const styles = {
 };
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.toolbar = React.createRef();
+    }
     state = {
         left: false,
     };
@@ -46,7 +50,7 @@ class NavBar extends React.Component {
 
     render() {
         let toolbar;
-        toolbar = this.props.article === true ? toolbar = <Toolbar id="back-to-top-anchor" /> : <Toolbar />;
+        toolbar = this.props.article === true ? toolbar = <Toolbar id="back-to-top-anchor" ref={this.toolbar} /> : <Toolbar />;
 
         const { classes } = this.props;
         const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];

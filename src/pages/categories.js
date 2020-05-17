@@ -1,7 +1,8 @@
 import React from "react";
-import {Paper} from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import SimpleList from "../components/SimpleList";
+import NavBar from "../components/NavBar";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,20 +16,23 @@ const useStyles = makeStyles((theme) => ({
     centredList: {
         marginLeft: "auto",
         marginRight: "auto",
-        columnSpan:"3 / span 3",
+        columnSpan: "3 / span 3",
         width: "100%"
     }
 }));
 export default function CategoriesPage() {
     const classes = useStyles();
     return (
-        <Paper className={classes.root}>
-            <h1 className={classes.centered}>Article Categories: </h1>
-            <article>
-                <SimpleList className={classes.centredList}
-                            titles={["Python", "C++", "JavaScript", "React", "TypeScript", "Java", "Spring", "CSS", "HTML", "SASS", "BootStrap"]}/>
-            </article>
-        </Paper>
+        <React.Fragment>
+            <NavBar />
+            <Paper className={classes.root}>
+                <h1 className={classes.centered}>Article Categories: </h1>
+                <article>
+                    <SimpleList className={classes.centredList}
+                        titles={["Python", "C++", "JavaScript", "React", "TypeScript", "Java", "Spring", "CSS", "HTML", "SASS", "BootStrap"]} />
+                </article>
+            </Paper>
+        </React.Fragment>
     );
 }
 
