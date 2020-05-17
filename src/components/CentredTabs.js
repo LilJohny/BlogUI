@@ -82,7 +82,8 @@ export default function CenteredTabs(props) {
                             "\n" +
                             "Roadmap\n" +
                             "The current series plan is below. Please note, I may rearrange, add, or remove planned sections.",
-                        link: "/article"
+                        link: "/article",
+                        id: 0
                     }]} />
 
                 </TabPanel>
@@ -144,7 +145,8 @@ export default function CenteredTabs(props) {
                             "We’d like to thank everyone who tested the early release of DevTools version 4. Your feedback helped improve this initial release significantly.\n" +
                             "\n" +
                             "We still have many exciting features planned and feedback is always welcome! Please feel free to open a GitHub issue or tag @reactjs on Twitter.",
-                        link: "/"
+                        link: "/",
+                        id: 1
                     }]} />
                 </TabPanel>
                 <TabPanel value={value} index={2} className={classes.tabPanel}>

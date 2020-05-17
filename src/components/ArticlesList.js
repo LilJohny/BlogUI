@@ -21,7 +21,7 @@ export default function ArticlesList(props) {
         <div className={classes.root}>
             <List component="nav" aria-label="secondary mailbox folders">
                 {articles.map((article) =>
-                    <ListItem key={article.title}>
+                    <ListItem key={article.id}>
                         <ArticleCard {...article} />
                     </ListItem>)}
             </List>
