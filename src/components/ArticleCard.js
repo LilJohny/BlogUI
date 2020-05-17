@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ArticleCard(props) {
     const classes = useStyles();
-    const [expanded] = React.useState(false);
 
     const title = props.title;
     const date = props.dateTime;
@@ -68,10 +67,7 @@ export default function ArticleCard(props) {
                         <ShareIcon />
                     </IconButton>
                     <Button
-                        className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
-                        })}
-                        aria-expanded={expanded}
+                        className={classes.expand}
                         aria-label="show more"
                         href={props.link}
                     >
