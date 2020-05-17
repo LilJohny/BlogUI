@@ -68,9 +68,7 @@ export default function AuthorCard(props) {
                         <ShareIcon />
                     </IconButton>
                     <Button
-                        className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
-                        })}
+                        className={classes.expand}
                         aria-expanded={expanded}
                         aria-label="show more"
                         href={props.link}
