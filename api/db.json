@@ -8,10 +8,38 @@
             "authorImageSrc": "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
             "authorImageAlt": "Author Image",
             "id": 0,
-            "savedPosts" : ["Saved post 1", "Saved post 2", "Saved post 3"],
-            "usersPosts" : ["Very long title of Post 1 written by user", "Post 2", "Post 3"],
-            "usersLikedCategories" : [["First liked category"], ["Second liked category"], ["Third liked category"]],
-            "usersBadges" : [["Badge 1", "Badge 2", "Badge 3", "Badge 4", "Badge 5", "Badge 6", "Badge 7"]]
+            "savedPosts": [
+                "Saved post 1",
+                "Saved post 2",
+                "Saved post 3"
+            ],
+            "usersPosts": [
+                "Very long title of Post 1 written by user",
+                "Post 2",
+                "Post 3"
+            ],
+            "usersLikedCategories": [
+                [
+                    "First liked category"
+                ],
+                [
+                    "Second liked category"
+                ],
+                [
+                    "Third liked category"
+                ]
+            ],
+            "usersBadges": [
+                [
+                    "Badge 1",
+                    "Badge 2",
+                    "Badge 3",
+                    "Badge 4",
+                    "Badge 5",
+                    "Badge 6",
+                    "Badge 7"
+                ]
+            ]
         }
     ],
     "articles": [
@@ -25,7 +53,10 @@
             "subtitle": "Test subtitle",
             "text": "Ever spent three hours trying to find that bit of knowledge that everyone seemed to have but you?\n\nAs a self-trained Python developer, I've sometimes found myself stuck in that knowledge crater, between tutorials far simpler than real life, and articles more advanced than I could comprehend. Even the documentation felt like a firehose of information, making it nearly impossible to find the one basic thing I needed to know.\n\nIn this series, I'll be exploring a few of these topics, in a way that hopefully makes them dead simple!\n\nIntended Audience\nWhile programmers at all experience levels may find this series useful, I'm specifically targeting Python novices. I am assuming, however, that you have a very basic understanding of programming. The coding topics especially will be more focused on the Python way of doing things, not on the underlying generic concept.\n\nWith that said, if you're an intermediate-level Python developer, you may still find it helpful to follow along with the series. Although I've been working with Python for nearly eight years, some of these topics didn't really \"click\" for me until recent years. These are the explanations I wish I'd had!\n\nWhat You Won't Find Here\nAll of the topics I'm discussing here go much, much deeper. However, I don't want to muddy the waters, so I'll be omitting a considerable amount of detail. Once you're comfortable with a topic, and have done it a few times yourself, I recommend going back and reading through the official Python documentation on the topic.\n\nA Note on Python Versions\nThe official end-of-life for Python 2 is rapidly approaching, so you should learn and begin using Python 3 as soon as possible! This entire series is geared towards Python 3, with a bias towards 3.6 and 3.7, except as otherwise noted.\n\nEdits\nThe articles in this series are frequently being reviewed by my fellow Python experts, and by the Dev community at large. I will expand and revise accordingly. Always check the edit timestamp at the top of the article.\n\nRoadmap\nThe current series plan is below. Please note, I may rearrange, add, or remove planned sections.",
             "link": "/article",
-            "id": 0
+            "id": 0,
+            "tags": [
+                "python"
+            ]
         },
         {
             "imageSrc": "https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg",
@@ -37,7 +68,10 @@
             "subtitle": "React News",
             "text": "A lot has changed in version 4! At a high level, this new version should offer significant performance gains and an improved navigation experience. It also offers full support for React Hooks, including inspecting nested objects.\n\nDevTools version 4 screenshot\nVisit the interactive tutorial to try out the new version or see the changelog for demo videos and more details.\n\nWhich versions of React are supported?\nreact-dom\n\n0-14.x: Not supported\n15.x: Supported (except for the new component filters feature)\n16.x: Supported\nreact-native\n\n0-0.61: Not supported\n0.62: Will be supported (when 0.62 is released)\nHow do I get the new DevTools?\nReact DevTools is available as an extension for Chrome and Firefox. If you have already installed the extension, it should update automatically within the next couple of hours.\n\nIf you use the standalone shell (e.g. in React Native or Safari), you can install the new version from NPM:\n\nnpm install -g react-devtools@^4\nWhere did all of the DOM elements go?\nThe new DevTools provides a way to filter components from the tree to make it easier to navigate deeply nested hierarchies. Host nodes (e.g. HTML <div>, React Native <View>) are hidden by default, but this filter can be disabled:\n\nDevTools component filters\n\nHow do I get the old version back?\nIf you are working with React Native version 60 (or older) you can install the previous release of DevTools from NPM:\n\nnpm install --dev react-devtools@^3\nFor older versions of React DOM (v0.14 or earlier) you will need to build the extension from source:\n\n# Checkout the extension source\ngit clone https://github.com/facebook/react-devtools\n\ncd react-devtools\n\n# Checkout the previous release branch\ngit checkout v3\n\n# Install dependencies and build the unpacked extension\nyarn install\nyarn build:extension\n\n# Follow the on-screen instructions to complete installation\nThank you!\nWe’d like to thank everyone who tested the early release of DevTools version 4. Your feedback helped improve this initial release significantly.\n\nWe still have many exciting features planned and feedback is always welcome! Please feel free to open a GitHub issue or tag @reactjs on Twitter.",
             "link": "/",
-            "id": 1
+            "id": 1,
+            "tags": [
+                "news"
+            ]
         }
     ]
 }
