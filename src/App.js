@@ -6,7 +6,6 @@ import ProfilePage from "./pages/profile";
 import {MuiThemeProvider} from "material-ui";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import NavBar from "./components/NavBar";
 import HomePage from "./pages/home";
 import InboxPage from "./pages/inbox";
 import InterestingPage from "./pages/interesting";
