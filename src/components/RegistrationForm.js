@@ -28,7 +28,10 @@ class RegistrationForm extends React.Component {
         super(props);
         this.state = { name: '', surname: '', mail: '', password: '' };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleNameChange.bind(this);
+        this.handleSurnameChange = this.handleSurnameChange.bind(this);
+        this.handleMailChange = this.handleMailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -54,9 +57,9 @@ class RegistrationForm extends React.Component {
         return (
             <Paper className={classes.root}>
                 <form onSubmit={this.handleSubmit}>
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Name" onChange={this.handleNameChange} /><br />
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Surname" onChange={this.handleSurnameChange} /><br />
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Mail" onChange={this.handleMailChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" label="Your Name" onChange={this.handleNameChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" label="Your Surname" onChange={this.handleSurnameChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" label="Your Mail" onChange={this.handleMailChange} /><br />
                     <TextField
                         className={classes.field}
                         id="standard-password-input"
