@@ -13,25 +13,20 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "155%",
+        width: "100%"
     },
     media: {
         height: 0,
-        paddingTop: '56%',
+        paddingTop: '56%'
     },
     expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
+        marginLeft: 'auto'
     },
 
     avatar: {
         backgroundColor: red[500],
     }
-}))
-    ;
+}));
 
 export default function AuthorCard(props) {
     const classes = useStyles();
