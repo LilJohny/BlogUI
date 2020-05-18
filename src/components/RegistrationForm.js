@@ -20,20 +20,29 @@ const styles = theme => ({
     field: {
         display: "block",
         marginRight: "auto",
-        
+
     }
 });
 class RegistrationForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
+        this.state = { name: '', surname: '', mail: '', password: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
+    handleNameChange(event) {
+        this.setState({ name: event.target.value });
+    }
+    handleSurnameChange(event) {
+        this.setState({ surname: event.target.value });
+    }
+    handleMailChange(event) {
+        this.setState({ mail: event.target.value });
+    }
+    handlePasswordChange(event) {
+        this.setState({ password: event.target.value });
     }
 
     handleSubmit(event) {
@@ -45,20 +54,20 @@ class RegistrationForm extends React.Component {
         return (
             <Paper className={classes.root}>
                 <form onSubmit={this.handleSubmit}>
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Name" onChange={this.handleChange} /><br />
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Surname" onChange={this.handleChange} /><br />
-                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Mail" onChange={this.handleChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Name" onChange={this.handleNameChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Surname" onChange={this.handleSurnameChange} /><br />
+                    <TextField className={classes.field} required id="standard-required" defaultValue="Your Mail" onChange={this.handleMailChange} /><br />
                     <TextField
                         className={classes.field}
                         id="standard-password-input"
                         label="Password"
                         type="password"
                         autoComplete="current-password"
-                        onChange={this.handleChange}
+                        onChange={this.handlePasswordChange}
                     /><br />
-                    <Button variant="contained" color="primary" href="#contained-buttons" type="submit">Sign up</Button>
+                    <Button onClick={this.handleSubmit} variant="contained" color="primary" href="#contained-buttons" type="submit">Sign up</Button>
                 </form>
-                </Paper>
+            </Paper>
         );
     }
 }
