@@ -19,7 +19,7 @@ export default class InboxPage extends React.Component {
                         <h1 className={"inboxHeader"}>{name}{" " + surname + "`s"} Inbox:</h1>
                         <Divider />
                         {messages.map((message) =>
-                            <Container>
+                            <Container key={message.id}>
                                 <AvatarImage className={"AvatarImage"} />
                                 <h2>{message.author}:</h2>
                                 <p>{message.text}</p>
