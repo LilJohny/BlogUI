@@ -78,8 +78,6 @@ function App() {
                     </Switch>
                 </Router>
             </div>
-
-
         </MuiThemeProvider>
     );
 }

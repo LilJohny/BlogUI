@@ -57,7 +57,8 @@ export default function InterestingPage() {
                         "\n" +
                         "Roadmap\n" +
                         "The current series plan is below. Please note, I may rearrange, add, or remove planned sections.",
-                    link: "/article"
+                    link: "/article",
+                    id: 0
                 }, {
                     imageSrc: "https://frontendmasters.com/static-assets/learn/og-learning-path-react.jpg",
                     authorImageSrc: "https://lh5.googleusercontent.com/--OlyHl449xI/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNk7ZZElQ_vKIQT_6d4HZw_wN3Qxg/mo/photo.jpg?sz=64",
@@ -115,7 +116,8 @@ export default function InterestingPage() {
                         "We’d like to thank everyone who tested the early release of DevTools version 4. Your feedback helped improve this initial release significantly.\n" +
                         "\n" +
                         "We still have many exciting features planned and feedback is always welcome! Please feel free to open a GitHub issue or tag @reactjs on Twitter.",
-                    link: "/"
+                    link: "/",
+                    id: 1
                 }]} />
             </Paper>
         </React.Fragment >);
