@@ -4,7 +4,8 @@
 # List of implemented pages:
 *  Article page
 *  Profile page
-### Currently app renders profile page by default, but there are commented code and instructions to render article page in src/App.js
+*  Home page
+## App feauteres routes between pages for easy navigation 
 On profile page categories icons are replaced with one icon because I don`t know what categories will be presented.
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

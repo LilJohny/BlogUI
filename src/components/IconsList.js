@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 export default function IconsList(props) {
     const classes = useStyles();
 
@@ -23,7 +22,7 @@ export default function IconsList(props) {
         <div className={classes.root}>
             <List component="nav" aria-label="main mailbox folders">
                 {props.list.map((text, index) => (
-                    <ListItem button>
+                    <ListItem button key={index}>
                         <ListItemIcon>
                             <DraftsIcon />
                         </ListItemIcon>

@@ -5,13 +5,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import '../css/NavBar.css';
 import Drawer from "@material-ui/core/Drawer";
-import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-
+import { BrowserRouter as Router } from "react-router-dom";
+import ListItemText from "@material-ui/core/ListItemText";
+import BackToTopButton from "./BackToTopButton";
 
 makeStyles({
     list: {
@@ -34,6 +35,10 @@ const styles = {
 };
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.toolbar = React.createRef();
+    }
     state = {
         left: false,
     };
@@ -45,21 +50,20 @@ class NavBar extends React.Component {
     };
 
     render() {
-        let toolbar;
+        let toolbarElement = this.props.article === true ? <Toolbar id="back-to-top-anchor" ref={this.toolbar} /> : <Toolbar />;
+        let button = null;
         if (this.props.article === true) {
-            toolbar = <Toolbar id="back-to-top-anchor" />;
-        } else {
-            toolbar = <Toolbar />;
+            button = <BackToTopButton anchor={this.toolbar} />;
         }
         const { classes } = this.props;
-
+        const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];
         const sideList = (
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
                 onKeyDown={this.toggleDrawer(false)}>
                 <List>
-                    {["Home", "Categories", "Interesting Posts For You", "Your Inbox"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText primary={text} />
+                    {navbar_links.map((text) => (
+                        <ListItem component="a" button key={text[0]} href={text[1]}>
+                            <ListItemText>{text[0]}</ListItemText>
                         </ListItem>
                     ))}
                 </List>
@@ -68,36 +72,39 @@ class NavBar extends React.Component {
 
         return (
             <React.Fragment>
-                <AppBar position="sticky">
-                    <Toolbar>
-                        <IconButton className={"menu"} aria-label="Menu" color="white"
-                            onClick={this.toggleDrawer(true)}>
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                            classes={{ paper: classes.paper }}
-                            open={this.state.left}
-                            onClose={this.toggleDrawer(false)}
-                        >
-                            <div
-                                tabIndex={0}
-                                role="button"
-                                onClick={this.toggleDrawer(false)}
-                                onKeyDown={this.toggleDrawer(false)}
-                                className={{ root: classes.root }}
-                            >
-                                {sideList}
-                            </div>
-                        </Drawer>
-
-                        <section className={"rightToolBar"}>
-                            <IconButton className={"profile"} aria-label="My profile" color="white">
-                                <FaceIcon />
+                <Router>
+                    <AppBar position="sticky">
+                        <Toolbar>
+                            <IconButton className={"menu"} aria-label="Menu" color="white"
+                                onClick={this.toggleDrawer(true)}>
+                                <MenuIcon />
                             </IconButton>
-                        </section>
-                    </Toolbar>
-                </AppBar>
-                {toolbar}
+                            <Drawer
+                                classes={{ paper: classes.paper }}
+                                open={this.state.left}
+                                onClose={this.toggleDrawer(false)}
+                            >
+                                <div
+                                    tabIndex={0}
+                                    role="button"
+                                    onClick={this.toggleDrawer(false)}
+                                    onKeyDown={this.toggleDrawer(false)}
+                                    className={{ root: classes.root }}
+                                >
+                                    {sideList}
+                                </div>
+                            </Drawer>
+
+                            <section className={"rightToolBar"}>
+                                <IconButton className={"profile"} aria-label="My profile" color={"black"} href="/profile">
+                                    <FaceIcon />
+                                </IconButton>
+                            </section>
+                        </Toolbar>
+                    </AppBar>
+                    {toolbarElement}
+                </Router>
+                {button}
             </React.Fragment>
         );
 

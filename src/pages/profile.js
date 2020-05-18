@@ -1,6 +1,5 @@
 import React from 'react';
 import AvatarImage from '../components/AvatarImage';
-import NavBar from "../components/NavBar";
 import "../css/Article.css";
 import "../css/Profile.css";
 import { Paper } from "material-ui";
@@ -9,6 +8,8 @@ import SimpleList from "../components/SimpleList";
 import Button from "@material-ui/core/Button";
 import IconsList from "../components/IconsList";
 import { Looks3, LooksOne, LooksTwo } from "@material-ui/icons";
+import { Toolbar } from '@material-ui/core';
+import NavBar from "../components/NavBar";
 
 export default class ProfilePage extends React.Component {
     render() {
@@ -18,6 +19,7 @@ export default class ProfilePage extends React.Component {
         return (
             <React.Fragment>
                 <NavBar />
+                <Toolbar />
                 <Container className={"profile"}>
                     <Paper>
                         <article>
@@ -26,7 +28,8 @@ export default class ProfilePage extends React.Component {
                                     style={imageStyle} /></div>
                                 <div><h1>User`s Name : {this.props.profileName}</h1>
                                     <Button variant="outlined" color={"primary"}>Follow</Button>
-                                    <h4>Joined us on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time> </h4>
+                                    <h4>Joined us on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time>
+                                    </h4>
                                     <p>{this.props.userBio}</p>
                                 </div>
                             </div>
