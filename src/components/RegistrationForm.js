@@ -18,13 +18,9 @@ const styles = theme => ({
         marginLeft: "auto"
     },
     field: {
-        display: "block"
-    },
-    paper: {
-        width: '100%',
-        maxWidth: 550,
-        marginLeft: "auto",
-        marginRight: "auto"
+        display: "block",
+        marginRight: "auto",
+        
     }
 });
 class RegistrationForm extends React.Component {
@@ -45,9 +41,9 @@ class RegistrationForm extends React.Component {
         event.preventDefault();
     }
     render() {
-        const classes = this.props;
+        const { classes } = this.props;
         return (
-            <Paper className={classes.paper}>
+            <Paper className={classes.root}>
                 <form onSubmit={this.handleSubmit}>
                     <TextField className={classes.field} required id="standard-required" defaultValue="Your Name" onChange={this.handleChange} /><br />
                     <TextField className={classes.field} required id="standard-required" defaultValue="Your Surname" onChange={this.handleChange} /><br />
