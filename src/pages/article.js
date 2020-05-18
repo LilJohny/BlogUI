@@ -2,10 +2,8 @@ import React from 'react';
 import '../css/Article.css';
 import {Paper} from "material-ui";
 import Container from "@material-ui/core/Container";
-import BackToTopButton from "../components/BackToTopButton";
 import ArticleImage from "../components/ArticleImage";
 import ArticleData from "../components/ArticleData";
-import {Toolbar} from '@material-ui/core';
 import NavBar from '../components/NavBar';
 
 
@@ -13,7 +11,7 @@ export default class ArticlePage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar artilce={true}/>
+                <NavBar article={true} />
                 <Container>
                     <Paper>
                         <article>
@@ -27,7 +25,6 @@ export default class ArticlePage extends React.Component {
                             <p>{this.props.text}</p>
                         </article>
                     </Paper>
-                    <BackToTopButton/>
                 </Container>
             </React.Fragment>
 

@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import ListItemText from "@material-ui/core/ListItemText";
+import BackToTopButton from "./BackToTopButton";
 
 makeStyles({
     list: {
@@ -49,9 +50,11 @@ class NavBar extends React.Component {
     };
 
     render() {
-        let toolbar;
-        toolbar = this.props.article === true ? toolbar = <Toolbar id="back-to-top-anchor" ref={this.toolbar} /> : <Toolbar />;
-
+        let toolbarElement = this.props.article === true ? <Toolbar id="back-to-top-anchor" ref={this.toolbar} /> : <Toolbar />;
+        let button = null;
+        if (this.props.article === true) {
+            button = <BackToTopButton anchor={this.toolbar} />;
+        }
         const { classes } = this.props;
         const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];
         const sideList = (
@@ -99,9 +102,9 @@ class NavBar extends React.Component {
                             </section>
                         </Toolbar>
                     </AppBar>
-                    {toolbar}
-
+                    {toolbarElement}
                 </Router>
+                {button}
             </React.Fragment>
         );
 

@@ -4,7 +4,6 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Zoom from "@material-ui/core/Zoom";
 import { makeStyles } from "@material-ui/core/styles";
-import NavBar from "./NavBar";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -23,8 +22,8 @@ function ScrollTop(props) {
     });
 
     const handleClick = event => {
-        const anchor = NavBar.toolbar;
-        console.log(NavBar.refs);
+        const anchor = props.anchor.current;
+
         if (anchor) {
             anchor.scrollIntoView({ behavior: "smooth", block: "center" });
         }
@@ -41,7 +40,8 @@ function ScrollTop(props) {
 
 export default class BackToTopButton extends React.Component {
     render() {
-        return (<ScrollTop>
+        
+        return (<ScrollTop anchor={this.props.anchor}>
             <Fab color="secondary" size="small" aria-label="scroll back to top">
                 <KeyboardArrowUpIcon />
             </Fab>
