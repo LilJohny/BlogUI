@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function CategoriesPage() {
     const classes = useStyles();
+    const titles = ["Python", "C++", "JavaScript", "React", "TypeScript", "Java", "Spring", "CSS", "HTML", "SASS", "BootStrap"];
     return (
         <React.Fragment>
             <NavBar />
@@ -29,7 +30,7 @@ export default function CategoriesPage() {
                 <h1 className={classes.centered}>Article Categories: </h1>
                 <article>
                     <SimpleList className={classes.centredList}
-                        titles={["Python", "C++", "JavaScript", "React", "TypeScript", "Java", "Spring", "CSS", "HTML", "SASS", "BootStrap"]} />
+                        titles={titles} />
                 </article>
             </Paper>
         </React.Fragment>
