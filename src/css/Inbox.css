@@ -5,9 +5,11 @@
 h2, p, img {
     display: inline-block;
 }
-.AvatarImage{
+
+.AvatarImage {
     display: inline-block;
 }
+
 .flexbox {
     display: -webkit-box;
     display: -moz-box;

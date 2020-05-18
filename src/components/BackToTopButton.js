@@ -40,7 +40,7 @@ function ScrollTop(props) {
 
 export default class BackToTopButton extends React.Component {
     render() {
-        
+
         return (<ScrollTop anchor={this.props.anchor}>
             <Fab color="secondary" size="small" aria-label="scroll back to top">
                 <KeyboardArrowUpIcon />
