@@ -53,7 +53,7 @@ export default function AuthorCard(props) {
                     />
 
                     <CardContent className={classes.bio}>
-                        <Typography variant="body2" color="textSecondary" component="span">
+                        <Typography variant="body2" color="textSecondary" component="div">
                             {bio}
                         </Typography>
                     </CardContent>
