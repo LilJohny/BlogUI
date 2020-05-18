@@ -3,8 +3,11 @@ import { Paper } from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import SimpleList from "../components/SimpleList";
 import NavBar from "../components/NavBar";
+import { render } from "@testing-library/react";
+import axios from "axios";
+import { withStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles((theme) => ({
+const styles = theme => ({
     root: {
         maxWidth: 550,
         marginLeft: "auto",
@@ -19,22 +22,46 @@ const useStyles = makeStyles((theme) => ({
         columnSpan: "3 / span 3",
         width: "100%"
     }
-}));
-export default function CategoriesPage() {
-    const classes = useStyles();
-    const titles = ["Python", "C++", "JavaScript", "React", "TypeScript", "Java", "Spring", "CSS", "HTML", "SASS", "BootStrap"];
-    return (
-        <React.Fragment>
-            <NavBar />
-            <Paper className={classes.root}>
-                <h1 className={classes.centered}>Article Categories: </h1>
-                <article>
-                    <SimpleList className={classes.centredList}
-                        titles={titles} />
-                </article>
-            </Paper>
-        </React.Fragment>
-    );
+});
+
+class CategoriesPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+            dataLoaded: false
+        }
+    }
+    componentWillMount() {
+        this.getData();
+    }
+    async getData() {
+        let categories = await axios.get("http://localhost:3001/categories");
+        this.setState({ categories: categories, dataLoaded: true });
+    }
+    
+    render() {
+        const { classes } = this.props
+        if (!this.state.dataLoaded) {
+            return <p>Loading data</p>;
+        } else {
+            const titles = this.state.categories.data;
+            return (
+                <React.Fragment>
+                    <NavBar />
+                    <Paper className={classes.root}>
+                        <h1 className={classes.centered}>Article Categories: </h1>
+                        <article>
+                            <SimpleList className={classes.centredList}
+                                titles={titles} />
+                        </article>
+                    </Paper>
+                </React.Fragment>
+            );
+        }
+    }
+
 }
 
+export default withStyles(styles)(CategoriesPage);
 
