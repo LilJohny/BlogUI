@@ -41,7 +41,7 @@ class CategoriesPage extends React.Component {
     }
     
     render() {
-        const { classes } = this.props
+        const { classes } = this.props;
         if (!this.state.dataLoaded) {
             return <p>Loading data</p>;
         } else {
