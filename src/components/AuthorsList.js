@@ -17,7 +17,7 @@ export default function AuthorsList(props) {
     return (<div className={classes.root}>
         <List component="nav" aria-label="secondary mailbox folders">
             {authors.map((author) =>
-                <ListItem>
+                <ListItem key={author.id}>
                     <AuthorCard {...author} />
                 </ListItem>)}
         </List>

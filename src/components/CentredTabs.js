@@ -34,6 +34,9 @@ export default function CenteredTabs(props) {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     }
+    const authors = props.authors;
+    const articles = props.articles.filter(article => !article.tags.includes("news"));
+    const newsArticles = props.articles.filter(article => article.tags.includes("news"));
     return (
 
         <Paper className={classes.root}>
@@ -52,14 +55,14 @@ export default function CenteredTabs(props) {
                 </Tabs>
                 <TabPanel value={value} index={0} className={classes.tabPanel}>
 
-                    <ArticlesList articles={props.articles} />
+                    <ArticlesList articles={articles} />
 
                 </TabPanel>
                 <TabPanel value={value} index={1} className={classes.tabPanel}>
-                    <ArticlesList articles={props.articles} />
+                    <ArticlesList articles={newsArticles} />
                 </TabPanel>
                 <TabPanel value={value} index={2} className={classes.tabPanel}>
-                    <AuthorsList authors={props.authors} />
+                    <AuthorsList authors={authors} />
                 </TabPanel>
             </article>
         </Paper>
