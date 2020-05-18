@@ -24,10 +24,12 @@ export default function AvatarImage(props) {
     const classes = useStyles();
     const classNames = props.large ? `${classes.rounded} ${classes.large}` : `${classes.rounded}`;
     return (
-        <div className={classes.root}>
-            <Avatar variant={props.variant} className={classNames}>
-                <img src={props.src} alt={props.alt} />
-            </Avatar>
-        </div>
+        <React.Fragment>
+            <div className={classes.root}>
+                <Avatar variant={props.variant} className={classNames}>
+                    <img src={props.src} alt={props.alt} />
+                </Avatar>
+            </div>
+        </React.Fragment>
     );
 }
