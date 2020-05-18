@@ -73,5 +73,18 @@
                 "news"
             ]
         }
+    ],
+    "categories": [
+        "Python",
+        "C++",
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Java",
+        "Spring",
+        "CSS",
+        "HTML",
+        "SASS",
+        "BootStrap"
     ]
 }
