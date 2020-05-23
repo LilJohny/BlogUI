@@ -5802,6 +5802,11 @@ is-docker@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.0.0.tgz#2cb0df0e75e2d064fe1864c37cdeacb7b2dcf25b"
   integrity sha512-pJEdRugimx4fBMra5z2/5iRdZ63OhYV0vr0Dwm5+xtW4D1FvRkB8hamMIhnWfyJeDdyr/aa7BDyNbtG38VxgoQ==
 
+is-email@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-email/-/is-email-1.0.0.tgz#6e02d4145dd6246fa05eea16bfe0b2b843ac2802"
+  integrity sha1-bgLUFF3WJG+gXuoWv+CyuEOsKAI=
+
 is-extendable@^0.1.0, is-extendable@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
@@ -8062,6 +8067,11 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
+
+password-validate@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/password-validate/-/password-validate-0.0.2.tgz#2902796710959c1002397ef005035de90a214313"
+  integrity sha512-eMaAsXWn31C/8DswG9nkMOMmJ5CBnvV4qAiIpICAdsORX5QeLEvXBs6wVL2D7+dfdJd1X4SLVBO6dMtE7Lh2/Q==
 
 path-browserify@0.0.1:
   version "0.0.1"

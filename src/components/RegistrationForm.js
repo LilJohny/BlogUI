@@ -3,6 +3,8 @@ import { Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import isEmail from 'is-email';
+import passwordValidator from 'password-validate';
 
 const styles = theme => ({
     root: {
@@ -20,14 +22,17 @@ const styles = theme => ({
     field: {
         display: "block",
         marginRight: "auto",
-
     }
 });
 class RegistrationForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { name: '', surname: '', mail: '', password: '' };
-
+        passwordValidator.minimumLength = 5;
+        passwordValidator.hasLowerCase = true;
+        passwordValidator.hasUpperCase = true;
+        passwordValidator.hasSymbols = true;
+        passwordValidator.hasNumbers = true;
         this.handleChange = this.handleNameChange.bind(this);
         this.handleSurnameChange = this.handleSurnameChange.bind(this);
         this.handleMailChange = this.handleMailChange.bind(this);
@@ -35,22 +40,30 @@ class RegistrationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleNameChange(event) {
-        this.setState({ name: event.target.value });
+    handleNameChange = (event) => {
+        this.setState({ name: event.target.value, surname: this.state.surname, email: this.state.email, password: this.state.password });
     }
-    handleSurnameChange(event) {
-        this.setState({ surname: event.target.value });
+    handleSurnameChange = (event) => {
+        this.setState({ surname: event.target.value, name: this.state.name, email: this.state.email, password: this.state.password });
     }
-    handleMailChange(event) {
-        this.setState({ mail: event.target.value });
+    handleMailChange = (event) => {
+        this.setState({ mail: event.target.value, name: this.state.name, surname: this.state.surname, password: this.state.password });
     }
-    handlePasswordChange(event) {
-        this.setState({ password: event.target.value });
+    handlePasswordChange = (event) => {
+        this.setState({ password: event.target.value, name: this.state.name, surname: this.state.surname, mail: this.state.mail });
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
+        let emailCorrect = isEmail(this.state.mail);
+        let passwordCorrect = passwordValidator(this.state.password).is.valid();
+        let correctFormData = emailCorrect && passwordCorrect;
+        if (correctFormData) {
+            alert("You succefully create d profile!Check your mail for profile activatin link.")
+        } else {
+            alert("Correct your data to correspond requirements");
+        }
+        return emailCorrect && passwordCorrect;
     }
     render() {
         const { classes } = this.props;
