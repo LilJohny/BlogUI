@@ -1,7 +1,7 @@
 import React from 'react';
 import AvatarImage from '../components/AvatarImage';
-import "../css/Article.css";
-import "../css/Profile.css";
+import "../css/article.css";
+import "../css/profile.css";
 import { Paper } from "material-ui";
 import Container from "@material-ui/core/Container";
 import SimpleList from "../components/SimpleList";

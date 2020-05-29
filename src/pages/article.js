@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Article.css';
+import '../css/article.css';
 import { Paper } from "material-ui";
 import Container from "@material-ui/core/Container";
 import ArticleImage from "../components/ArticleImage/ArticleImage";

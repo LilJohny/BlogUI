@@ -1,5 +1,5 @@
 import 'typeface-roboto';
-import './css/App.css'
+import './css/app.css'
 import React from 'react';
 import ArticlePage from "./pages/article";
 import ProfilePage from "./pages/profile";
@@ -20,7 +20,7 @@ function App() {
                     <CssBaseline />
                     <Switch>
                         <Route path="/registration">
-                            <RegistrationPage/>
+                            <RegistrationPage />
                         </Route>
                         <Route path="/profile">
                             <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}
