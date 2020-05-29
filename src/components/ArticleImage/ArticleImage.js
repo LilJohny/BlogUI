@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/ArticleImage.css';
+import './ArticleImage.css';
 
 
 export default class ArticleImage extends React.Component {

@@ -30,14 +30,14 @@ class CategoriesPage extends React.Component {
             dataLoaded: false
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         this.getData();
     }
     async getData() {
         let categories = await axios.get("http://localhost:3001/categories");
         this.setState({ categories: categories, dataLoaded: true });
     }
-    
+
     render() {
         const { classes } = this.props;
         if (!this.state.dataLoaded) {

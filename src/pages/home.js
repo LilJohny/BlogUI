@@ -12,7 +12,7 @@ export default class HomePage extends React.Component {
             dataLoaded: false
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         this.getData();
     }
     async getData() {

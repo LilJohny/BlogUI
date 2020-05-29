@@ -3,7 +3,7 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
-import '../css/NavBar.css';
+import './NavBar.css';
 import Drawer from "@material-ui/core/Drawer";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
