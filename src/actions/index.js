@@ -12,3 +12,4 @@ const loadData = (link) => (dispatch) => {
 const toggleDrawer = () => (dispatch) => {
     dispatch(drawerToggled());
 }
+export { loadData, toggleDrawer };
