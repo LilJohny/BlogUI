@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import rootReducer from './reducers/root';
 import ReduxThunk from 'redux-thunk';
 
-const initialState = { content: [], dataLoaded:false, drawerToogled:false };
+const initialState = { content: [], dataLoaded:false, drawerToggled:false };
 
 export default function configStore() {
     return createStore(
