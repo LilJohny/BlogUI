@@ -38,7 +38,7 @@ function ScrollTop(props) {
     );
 }
 
-export function BackToTopButton(props) {
+export default function BackToTopButton(props) {
     return (<ScrollTop anchor={this.props.anchor}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
