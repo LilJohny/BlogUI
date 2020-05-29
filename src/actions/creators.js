@@ -1,3 +1,4 @@
-import { DATA_LOADED } from "./types";
-const dataLoaded = () = ({ type: DATA_LOADED });
-export { dataLoaded };
+import { DATA_LOADED, DRAWER_TOGGLED } from "./types";
+const dataLoaded = (data) => ({ type: DATA_LOADED, content: data });
+const drawerToggled = () => ({type: DRAWER_TOGGLED});
+export { dataLoaded, drawerToggled };
