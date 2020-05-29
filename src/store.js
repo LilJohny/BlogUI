@@ -13,4 +13,4 @@ export default function configStore() {
         window.devToolsExtension ? window.devToolsExtension() : f => f
       )
     );
-  }
+}
