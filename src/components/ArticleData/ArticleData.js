@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarImage from "./AvatarImage";
+import AvatarImage from "../AvatarImage/AvatarImage";
 import '../css/ArticleData.css'
 
 export default class ArticleData extends React.Component {

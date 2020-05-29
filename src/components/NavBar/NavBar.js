@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import ListItemText from "@material-ui/core/ListItemText";
-import BackToTopButton from "./BackToTopButton";
+import BackToTopButton from "../BackToTopButton/BackToTopButton";
 
 makeStyles({
     list: {

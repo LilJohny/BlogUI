@@ -1,7 +1,7 @@
 import React from "react";
-import ArticlesList from "../components/ArticlesList";
+import ArticlesList from "../components/ArticlesList/ArticlesList";
 import { Paper } from "@material-ui/core";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 import { withStyles } from "@material-ui/styles";
 import axios from "axios";
 

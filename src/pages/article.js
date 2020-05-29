@@ -2,9 +2,9 @@ import React from 'react';
 import '../css/Article.css';
 import { Paper } from "material-ui";
 import Container from "@material-ui/core/Container";
-import ArticleImage from "../components/ArticleImage";
-import ArticleData from "../components/ArticleData";
-import NavBar from '../components/NavBar';
+import ArticleImage from "../components/ArticleImage/ArticleImage";
+import ArticleData from "../components/ArticleData/ArticleData";
+import NavBar from '../components/NavBar/NavBar';
 
 
 export default class ArticlePage extends React.Component {

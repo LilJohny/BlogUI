@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import ArticlesList from "./ArticlesList";
+import ArticlesList from "../ArticlesList/ArticlesList";
 import AuthorsList from "./AuthorsList";
-import TabPanel from "./TabPanel";
+import TabPanel from "../TabPanel/TabPanel";
 
 const useStyles = makeStyles({
     root: {
