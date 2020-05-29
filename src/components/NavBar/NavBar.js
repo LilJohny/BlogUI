@@ -3,7 +3,6 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from 'material-ui/IconButton';
-import './NavBar.css';
 import Drawer from "@material-ui/core/Drawer";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
@@ -13,6 +12,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import ListItemText from "@material-ui/core/ListItemText";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
+import './NavBar.css';
 
 makeStyles({
     list: {
