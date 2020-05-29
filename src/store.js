@@ -1,10 +1,11 @@
 import { createStore, compose, applyMiddleware } from "redux";
-import rootReducer from './reducers/root';
+import rootReducer from './reducers/rootReducer';
 import ReduxThunk from 'redux-thunk';
 
 const initialState = { content: [], dataLoaded:false, drawerToggled:false };
 
 export default function configStore() {
+  console.log(initialState);
     return createStore(
       rootReducer,
       initialState,
@@ -14,3 +15,4 @@ export default function configStore() {
       )
     );
 }
+export { initialState };
