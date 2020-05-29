@@ -1,0 +1,2 @@
+const DATA_LOADED = 'DATA_LOADED';
+export { DATA_LOADED };
