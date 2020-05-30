@@ -3,7 +3,7 @@ import ArticlesList from "../components/ArticlesList/ArticlesList";
 import { Paper } from "@material-ui/core";
 import NavBar from "../components/NavBar/NavBar";
 import { withStyles } from "@material-ui/styles";
-import axios from "axios";
+
 
 const styles = theme => ({
     root: {
@@ -32,7 +32,8 @@ class InterestingPage extends React.Component {
         this.getData();
     }
     async getData() {
-        let articles = await axios.get("http://localhost:3001/articles");
+        //let articles = await axios.get("http://localhost:3001/articles");
+        const articles = [];
         this.setState({ articles: articles, dataLoaded: true });
     }
     render() {
