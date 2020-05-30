@@ -28,7 +28,6 @@ function CategoriesPage(props) {
     useEffect(() => {
         props.loadData("http://localhost:3001/categories");
     }, []);
-    console.log(props);
     const classes = useStyles();
     if (!props.dataLoaded) {
         return <p>Loading data</p>;
