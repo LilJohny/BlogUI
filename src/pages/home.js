@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import { loadData } from '../actions';
 
 function HomePage(props) {
-    useEffect(() => {
+    const loadData = props.loadData;
+    useEffect((props) => {
         const links = ["http://localhost:3001/articles", "http://localhost:3001/authors"]
-        props.loadData(links);
+        loadData(links);
     }, []);
     const articlesLoaded = props.articles!==undefined && props.articles.length!==0;
     const authorsLoaded = props.authors!== undefined && props.authors.length!==0;
