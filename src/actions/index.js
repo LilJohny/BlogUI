@@ -1,11 +1,10 @@
-import axios from "axios";
 import { dataLoaded, drawerToggled } from "./creators";
 
 const loadData = (link) => (dispatch) => {
-    axios.get(link).then(resp => {
+    fetch('http://localhost:3001/articles').then(resp => {
         return resp.json();
-    }).then(content => {
-        dispatch(dataLoaded(content));
+    }).then(body => {
+        dispatch(dataLoaded(body));
     });
 }
 

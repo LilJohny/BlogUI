@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Paper } from "@material-ui/core";
 import SimpleList from "../components/SimpleList";
 import NavBar from "../components/NavBar";
-import axios from "axios";
-import { withStyles } from "@material-ui/styles";
 
-const styles = theme => ({
+import { makeStyles } from "@material-ui/core/styles";
+import { connect } from 'react-redux';
+import { loadData } from '../actions';
+
+const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 550,
         marginLeft: "auto",
@@ -20,46 +22,39 @@ const styles = theme => ({
         columnSpan: "3 / span 3",
         width: "100%"
     }
+}));
+
+function CategoriesPage(props) {
+    useEffect(() => {
+        props.loadData("http://localhost:3001/articles");
+    }, []);
+    console.log(props);
+    const classes = useStyles();
+    if (!props.dataLoaded) {
+        return <p>Loading data</p>;
+    } else {
+        const titles = props.content;
+        return (
+            <React.Fragment>
+                <NavBar />
+                <Paper className={classes.root}>
+                    <h1 className={classes.centered}>Article Categories: </h1>
+                    <article>
+                        <SimpleList className={classes.centredList}
+                            titles={titles} />
+                    </article>
+                </Paper>
+            </React.Fragment>
+        );
+    }
+}
+const mapStateToProps = (state) => ({
+    content: state.content,
+    dataLoaded: state.dataLoaded
+});
+const mapDispatchToProps = (dispatch) => ({
+    loadData: (link) => dispatch(loadData(link)),
 });
 
-class CategoriesPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            categories: [],
-            dataLoaded: false
-        }
-    }
-    componentDidMount() {
-        this.getData();
-    }
-    async getData() {
-        let categories = await axios.get("http://localhost:3001/categories");
-        this.setState({ categories: categories, dataLoaded: true });
-    }
-
-    render() {
-        const { classes } = this.props;
-        if (!this.state.dataLoaded) {
-            return <p>Loading data</p>;
-        } else {
-            const titles = this.state.categories.data;
-            return (
-                <React.Fragment>
-                    <NavBar />
-                    <Paper className={classes.root}>
-                        <h1 className={classes.centered}>Article Categories: </h1>
-                        <article>
-                            <SimpleList className={classes.centredList}
-                                titles={titles} />
-                        </article>
-                    </Paper>
-                </React.Fragment>
-            );
-        }
-    }
-
-}
-
-export default withStyles(styles)(CategoriesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesPage);
 
