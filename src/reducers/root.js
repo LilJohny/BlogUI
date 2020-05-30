@@ -2,9 +2,11 @@ import { NEW_DATA_LOADED, DRAWER_TOGGLED } from '../actions/types';
 import { initialState } from '../store';
 
 export default function rootReducer(state = initialState, action) {
+    console.log(state);
+    console.log(action);
     switch (action.type) {
         case DRAWER_TOGGLED: {
-            return { categories: state.categories, authors: state.authors, articles: state.articles, drawerToggled: true };
+            return { categories: state.categories, authors: state.authors, articles: state.articles, drawerToggled: action.value };
         }
         case NEW_DATA_LOADED: {
             const keyValue = action.keyValue;

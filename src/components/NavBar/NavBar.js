@@ -7,22 +7,15 @@ import Drawer from "@material-ui/core/Drawer";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import makeStyles from "@material-ui/styles/makeStyles";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import ListItemText from "@material-ui/core/ListItemText";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
+import { connect } from 'react-redux';
+import { toggleDrawer } from '../../actions';
 import './NavBar.css';
 
-makeStyles({
-    list: {
-        width: 250,
-    },
-    fullList: {
-        width: 'auto',
-    },
-});
-const styles = {
+
+const useStyles = makeStyles(theme => ({
     list: {
         width: 250
     },
@@ -32,34 +25,19 @@ const styles = {
     paper: {
         background: "#485461"
     }
-};
-
-class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.toolbar = React.createRef();
-    }
-    state = {
-        left: false,
-    };
-
-    toggleDrawer = (open) => () => {
-        this.setState({
-            left: open
-        });
-    };
-
-    render() {
-        let toolbarElement = this.props.article === true ? <Toolbar id="back-to-top-anchor" ref={this.toolbar} /> : <Toolbar />;
+}));
+function NavBar(props){
+        const toolbar = React.createRef();
+        let toolbarElement = props.article === true ? <Toolbar id="back-to-top-anchor" ref={toolbar} /> : <Toolbar />;
         let button = null;
-        if (this.props.article === true) {
-            button = <BackToTopButton anchor={this.toolbar} />;
+        if (props.article === true) {
+            button = <BackToTopButton anchor={toolbar} />;
         }
-        const { classes } = this.props;
+        const classes  = useStyles;
         const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"], ["Register account","/registration"]];
         const sideList = (
-            <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
-                onKeyDown={this.toggleDrawer(false)}>
+            <div className={classes.list} role="presentation" onClick={props.toggleDrawer(false)}
+                onKeyDown={props.toggleDrawer(false)}>
                 <List>
                     {navbar_links.map((text) => (
                         <ListItem component="a" button key={text[0]} href={text[1]}>
@@ -69,26 +47,27 @@ class NavBar extends React.Component {
                 </List>
             </div>
         );
-
+    const toggleDrawer = (open) => { props.toggleDrawer(open) };
+    const drawerToggled = props.drawerToggled;
         return (
             <React.Fragment>
                 <Router>
                     <AppBar position="sticky">
                         <Toolbar>
                             <IconButton className={"menu"} aria-label="Menu" color="white"
-                                onClick={this.toggleDrawer(true)}>
+                                onClick={toggleDrawer(true)}>
                                 <MenuIcon />
                             </IconButton>
                             <Drawer
                                 classes={{ paper: classes.paper }}
-                                open={this.state.left}
-                                onClose={this.toggleDrawer(false)}
+                                open={drawerToggled}
+                                onClose={toggleDrawer(false)}
                             >
                                 <div
                                     tabIndex={0}
                                     role="button"
-                                    onClick={this.toggleDrawer(false)}
-                                    onKeyDown={this.toggleDrawer(false)}
+                                    onClick={toggleDrawer(false)}
+                                    onKeyDown={toggleDrawer(false)}
                                     className={{ root: classes.root }}
                                 >
                                     {sideList}
@@ -107,13 +86,14 @@ class NavBar extends React.Component {
                 {button}
             </React.Fragment>
         );
-
     }
-}
 
-NavBar.propTypes = {
-    classes: PropTypes.object.isRequired
-};
+const mapStateToProps = (state) => ({
+    drawerToggled:state.drawerToggled
+});
+const mapDispatchToProps = (dispatch) => ({
+    toggleDrawer: (open) => dispatch(toggleDrawer(open)),
+});
 
-export default withStyles(styles)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
 

@@ -6,13 +6,13 @@ const loadData = (links) => (dispatch) => {
             return resp.json();
         }).then(content => {
             const tokens = links[i].split('/');
-            console.log(content);
             dispatch(newDataLoaded(tokens[tokens.length - 1], content));
         });
     };
 }
 
-const toggleDrawer = () => (dispatch) => {
-    dispatch(drawerToggled());
+const toggleDrawer = (open) => (dispatch) => {
+    console.log(open);
+    dispatch(drawerToggled(open));
 }
 export { loadData, toggleDrawer };
