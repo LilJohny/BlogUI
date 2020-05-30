@@ -2,10 +2,9 @@ import { createStore, compose, applyMiddleware } from "redux";
 import rootReducer from './reducers/root';
 import ReduxThunk from 'redux-thunk';
 
-const initialState = { content: [], dataLoaded: false, drawerToggled: false };
+const initialState = { articles:[], authors:[],categories:[],  drawerToggled: false };
 
 export default function configStore() {
-  console.log(ReduxThunk);
   return createStore(
     rootReducer,
     initialState,
