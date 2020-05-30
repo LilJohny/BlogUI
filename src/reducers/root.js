@@ -1,4 +1,4 @@
-import { NEW_DATA_LOADED, DATA_LOADED, DRAWER_TOGGLED } from '../actions/types';
+import { NEW_DATA_LOADED, DRAWER_TOGGLED } from '../actions/types';
 import { initialState } from '../store';
 
 export default function rootReducer(state = initialState, action) {
