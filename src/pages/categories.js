@@ -26,13 +26,15 @@ const useStyles = makeStyles(theme => ({
 
 function CategoriesPage(props) {
     useEffect(() => {
-        props.loadData("http://localhost:3001/categories");
+        props.loadData(["http://localhost:3001/categories"]);
     }, []);
     const classes = useStyles();
-    if (!props.dataLoaded) {
+    console.log(props);
+    const categoriesLoaded = props.categories !== undefined && props.categories.length !== 0;
+    if (!categoriesLoaded) {
         return <p>Loading data</p>;
     } else {
-        const titles = props.content;
+        const titles = props.categories;
         return (
             <React.Fragment>
                 <NavBar />
@@ -48,7 +50,7 @@ function CategoriesPage(props) {
     }
 }
 const mapStateToProps = (state) => ({
-    content: state.content,
+    categories: state.categories,
     dataLoaded: state.dataLoaded
 });
 const mapDispatchToProps = (dispatch) => ({
