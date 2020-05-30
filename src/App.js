@@ -1,5 +1,5 @@
 import 'typeface-roboto';
-import './css/app.css'
+import './css/app.css';
 import React from 'react';
 import ArticlePage from "./pages/article";
 import ProfilePage from "./pages/profile";
