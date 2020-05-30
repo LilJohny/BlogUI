@@ -26,7 +26,7 @@ function InterestingPage(props) {
     useEffect((props) => {
         const links = ["http://localhost:3001/articles", "http://localhost:3001/authors"]
         loadData(links);
-    }, []);
+    }, [loadData]);
     const articlesLoaded = props.articles !== undefined && props.articles.length !== 0;
     const classes = useStyles();
     if (!articlesLoaded) {

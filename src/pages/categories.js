@@ -28,7 +28,7 @@ function CategoriesPage(props) {
     const loadData = props.loadData;
     useEffect((props) => {
         loadData(["http://localhost:3001/categories"]);
-    }, []);
+    }, [loadData]);
     const classes = useStyles();
     console.log(props);
     const categoriesLoaded = props.categories !== undefined && props.categories.length !== 0;

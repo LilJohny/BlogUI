@@ -9,7 +9,7 @@ function HomePage(props) {
     useEffect((props) => {
         const links = ["http://localhost:3001/articles", "http://localhost:3001/authors"]
         loadData(links);
-    }, []);
+    }, [loadData]);
     const articlesLoaded = props.articles!==undefined && props.articles.length!==0;
     const authorsLoaded = props.authors!== undefined && props.authors.length!==0;
     if (!(articlesLoaded && authorsLoaded)) {
