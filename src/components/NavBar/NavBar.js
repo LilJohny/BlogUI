@@ -34,7 +34,7 @@ function NavBar(props) {
         button = <BackToTopButton anchor={toolbar} />;
     }
     const toggleDrawer = (open) => { props.toggleDrawer(open) };
-    const classes = useStyles;
+    const classes = useStyles();
     const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"], ["Register account", "/registration"]];
     const sideList = (
         <div className={classes.list} role="presentation" onClick={()=>toggleDrawer(false)}
