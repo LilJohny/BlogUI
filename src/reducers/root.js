@@ -3,9 +3,6 @@ import { initialState } from '../store';
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
-        case DATA_LOADED: {
-            return { categories: state.categories, authors: state.authors, articles: state.articles, drawerToggled: state.drawerToggled };
-        }
         case DRAWER_TOGGLED: {
             return { categories: state.categories, authors: state.authors, articles: state.articles, drawerToggled: true };
         }
