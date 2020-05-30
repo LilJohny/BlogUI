@@ -1,10 +1,10 @@
 import { dataLoaded, drawerToggled } from "./creators";
 
 const loadData = (link) => (dispatch) => {
-    fetch('http://localhost:3001/articles').then(resp => {
+    fetch(link).then(resp => {
         return resp.json();
-    }).then(body => {
-        dispatch(dataLoaded(body));
+    }).then(content => {
+        dispatch(dataLoaded(content));
     });
 }
 

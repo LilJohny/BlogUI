@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 function CategoriesPage(props) {
     useEffect(() => {
-        props.loadData("http://localhost:3001/articles");
+        props.loadData("http://localhost:3001/categories");
     }, []);
     console.log(props);
     const classes = useStyles();
