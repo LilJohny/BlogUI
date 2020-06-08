@@ -1,39 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CenteredTabs from "../components/CentredTabs";
 import NavBar from "../components/NavBar";
-import axios from "axios";
+import { connect } from 'react-redux';
+import { loadData } from '../actions';
 
-export default class HomePage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            articles: [],
-            authors: [],
-            dataLoaded: false
-        }
-    }
-    componentWillMount() {
-        this.getData();
-    }
-    async getData() {
-        let articles = await axios.get("http://localhost:3001/articles");
-        let authors = await axios.get("http://localhost:3001/authors");
-        this.setState({ articles: articles, authors: authors, dataLoaded: true });
-    }
-
-    render() {
-        if (!this.state.dataLoaded) {
-            return <p>Loading data</p>
-        } else {
-            console.log(this.state.articles.data);
-            const articles = this.state.articles.data;
-            const authors = this.state.authors.data;
-            return (
-                <React.Fragment>
-                    <NavBar />
-                    <CenteredTabs articles={articles} authors={authors} />
-                </React.Fragment>
-            );
-        }
+function HomePage(props) {
+    const loadData = props.loadData;
+    useEffect((props) => {
+        const links = ["http://localhost:3001/articles", "http://localhost:3001/authors"]
+        loadData(links);
+    }, [loadData]);
+    const articlesLoaded = props.articles!==undefined && props.articles.length!==0;
+    const authorsLoaded = props.authors!== undefined && props.authors.length!==0;
+    if (!(articlesLoaded && authorsLoaded)) {
+        return <p>Loading data</p>
+    } else {
+        const articles = props.articles;
+        const authors = props.authors;
+        return (
+            <React.Fragment>
+                <NavBar />
+                <CenteredTabs articles={articles} authors={authors} />
+            </React.Fragment>
+        );
     }
 }
+const mapStateToProps = (state) => ({
+    articles: state.articles,
+    authors: state.authors,
+    dataLoaded: state.dataLoaded
+});
+const mapDispatchToProps = (dispatch) => ({
+    loadData: (link) => dispatch(loadData(link)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

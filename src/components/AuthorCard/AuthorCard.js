@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import ShareIcon from '@material-ui/icons/Share';
 import Button from "@material-ui/core/Button";
+import './AuthorCard.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import AvatarImage from '../components/AvatarImage';
-import "../css/Article.css";
-import "../css/Profile.css";
+import "../css/article.css";
+import "../css/profile.css";
 import { Paper } from "material-ui";
 import Container from "@material-ui/core/Container";
 import SimpleList from "../components/SimpleList";
@@ -11,8 +11,7 @@ import { Looks3, LooksOne, LooksTwo } from "@material-ui/icons";
 import { Toolbar } from '@material-ui/core';
 import NavBar from "../components/NavBar";
 
-export default class ProfilePage extends React.Component {
-    render() {
+export default function ProfilePage(props) {
         const imageStyle = {
             gridColumn: "1/span 7"
         };
@@ -30,11 +29,11 @@ export default class ProfilePage extends React.Component {
                             <div className={"flexbox"}>
                                 <div><AvatarImage large={true} variant={"rounded"} className={"ProfilePicture"}
                                     style={imageStyle} /></div>
-                                <div><h1>User`s Name : {this.props.profileName}</h1>
+                                <div><h1>User`s Name : {props.profileName}</h1>
                                     <Button variant="outlined" color={"primary"}>Follow</Button>
-                                    <h4>Joined us on <time dateTime={this.props.dateTime}>{this.props.dateTime}</time>
+                                    <h4>Joined us on <time dateTime={props.dateTime}>{props.dateTime}</time>
                                     </h4>
-                                    <p>{this.props.userBio}</p>
+                                    <p>{props.userBio}</p>
                                 </div>
                             </div>
                             <div className={"saved"}>
@@ -62,6 +61,4 @@ export default class ProfilePage extends React.Component {
                 </Container>
             </React.Fragment>
         );
-
     }
-}

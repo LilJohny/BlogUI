@@ -1,7 +1,7 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
-import '../css/Inbox.css';
+import '../css/inbox.css';
 import { Divider } from "@material-ui/core";
 import AvatarImage from "../components/AvatarImage";
 import NavBar from "../components/NavBar";

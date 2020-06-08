@@ -1,0 +1,19 @@
+.inboxHeader {
+    text-align: center;
+}
+
+h2, p, img {
+    display: inline-block;
+}
+
+.AvatarImage {
+    display: inline-block;
+}
+
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
