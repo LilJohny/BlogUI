@@ -10,6 +10,7 @@ import HomePage from "./pages/home";
 import InboxPage from "./pages/inbox";
 import InterestingPage from "./pages/interesting";
 import CategoriesPage from "./pages/categories";
+import RegistrationPage from "./pages/registration";
 
 function App() {
     return (
@@ -18,6 +19,9 @@ function App() {
                 <Router>
                     <CssBaseline />
                     <Switch>
+                        <Route path="/registration">
+                            <RegistrationPage/>
+                        </Route>
                         <Route path="/profile">
                             <ProfilePage profileName={"Denis Ivanenko"} dateTime={"2017-02-14"}
                                 userBio={"Example of User Bio. Here User can write about himself."} />

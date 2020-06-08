@@ -56,7 +56,7 @@ class NavBar extends React.Component {
             button = <BackToTopButton anchor={this.toolbar} />;
         }
         const { classes } = this.props;
-        const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"]];
+        const navbar_links = [["Home", "/"], ["Categories", "/categories"], ["Interesting Posts For You", "/interesting"], ["Your Inbox", "/inbox"], ["Register account","/registration"]];
         const sideList = (
             <div className={classes.list} role="presentation" onClick={this.toggleDrawer(false)}
                 onKeyDown={this.toggleDrawer(false)}>

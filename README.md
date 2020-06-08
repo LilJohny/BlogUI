@@ -1,6 +1,17 @@
 
 ---
-# Implemeted pages are stored inside src/pages directory
+# HOW TO RUN PROJECT
+Project now consists of tow components:
+* React UI
+* json-server
+Two launch project correctly, you should laucnh React app on any avaliable port.
+json server should be launched ONLY on port 3001
+Launchng steps:
+* `yarn install`
+* `yarn start`  in root directory of the project
+* `npx json-server --watch api/db.json --port 3001` in root of the project in separate terminal
+* Done !
+# Implemeted pages are storeнфкт іd inside src/pages directory
 # List of implemented pages:
 *  Article page
 *  Profile page
